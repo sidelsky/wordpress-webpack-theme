@@ -3,7 +3,8 @@
 !.gitignore
 !wp-content
 !wp-content/mu-plugins
-!wp-content/themes/wordpress-webpack/README.md
+!README
+!README.md
 
 #Ignore these...
 wp-content/themes/wordpress-webpack/node_modules
