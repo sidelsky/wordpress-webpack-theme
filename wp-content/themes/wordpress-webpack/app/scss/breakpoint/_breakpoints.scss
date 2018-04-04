@@ -1,0 +1,36 @@
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+$breakpoints: (
+  'small-phone': 380px,
+  'phone': 420px,
+  'phone-landscape': 736px,
+  'iphone-landscape': 667px,
+  'tablet': 768px,
+  'maximum': $max-page-width
+) !default;
+
+
+// $media-expressions: (
+//   'ipad': '(-webkit-min-device-pixel-ratio: 2), (min-resolution 192dpi)'
+// );
+
+@import 'vendor/include-media';
+
+$landscape-phone: "<=phone-landscape","landscape";
+$landscape-iphone: "<=iphone-landscape","landscape";
+
+
+
+// $breakpoints: (
+//   'phone': 320px,
+//   'tablet': 768px,
+//   'maximum': $max-page-width
+// ) !default;
