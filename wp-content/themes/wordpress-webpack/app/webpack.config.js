@@ -91,12 +91,11 @@ module.exports = {
          hash: true,
          svgoOptions: {
             plugins: [
-               { removeTitle: false },
-               { removeUselessStrokeAndFill: true },
-               { removeAttrs: { attrs: "fill|class|style" } },
-               { removeStyleElement: true },
-               { removeRasterImages: true },
-               { sortAttr: true }
+               { 
+                  cleanup: true,
+                  style: 'display:none',
+                  xmlns: 'http://www.w3.org/2000/svg'
+                },
             ]
          },
          prefix: "icon" + "-"

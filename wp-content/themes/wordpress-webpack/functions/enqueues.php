@@ -23,12 +23,14 @@
 			wp_register_script('jquery', '//ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js', false, '3.3.1', true);
 			wp_enqueue_script('jquery');
 		}
+		
+		$scriptFilename = 'app.min.js';
 
-		if (WP_ENV == 'production') {
-			$scriptFilename = 'app.min.js';
-		} else {
-			$scriptFilename = 'app.min.js';
-		}
+		// if (WP_ENV == 'production') {
+		// 	$scriptFilename = 'app.min.js';
+		// } else {
+		// 	$scriptFilename = 'app.min.js';
+		// }
 
 		wp_register_script('theme_js', THEME_URI . '/dist/' . $scriptFilename, array(), '1.1', true);
 			// Localize the script with new data
