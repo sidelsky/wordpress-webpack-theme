@@ -1,5 +1,4 @@
 #Do not ignore these...
-/*
 !.gitignore
 !wp-content
 !wp-content/mu-plugins
@@ -7,6 +6,7 @@
 !README.md
 
 #Ignore these...
+/*
 wp-content/themes/wordpress-webpack/node_modules
 wp-content/themes/wordpress-webpack/yarn-error.log
 wp-content/uploads
