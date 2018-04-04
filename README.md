@@ -6,7 +6,7 @@ Javascript and Sass.
 ## Install
 In your Wordpress theme folder:
 ```
-$ git clone https://github.com/danderozier/wordpress-webpack-boilerplate
+$ git clone https://github.com/sidelsky/wordpress-webpack-theme
 $ yarn install
 $ yarn run watch
 ```
