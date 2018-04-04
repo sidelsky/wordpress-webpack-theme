@@ -5,9 +5,9 @@
 /**
 * Generic
 */
-@import 'generic/variables';
 //@import 'generic/functions';
 @import 'generic/mixins';
+@import 'generic/variables';
 
 /*
 * Reset
@@ -23,9 +23,22 @@
 * Base
 */
 //@import 'base/typography';
-//@import 'base/fonts';
+
+@import 'base/general';
+@import 'base/icons';
+
+/**
+* Fonts
+*/
+@import 'fonts/fonts';
 
 /**
 * Breakpoint
 */
 @import 'breakpoint/breakpoints';
+
+
+.menu ul li a {
+    font-family: $font-primary-regular;
+    font-size: 36px;
+}

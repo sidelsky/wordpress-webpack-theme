@@ -25,13 +25,15 @@ $confirm: #02c519;
 $error: $ms-red;
 
 
-//Typefaces
-//$arial: 'Arial', sans-serif;
+/**
+* Typefaces
+*/
+$default-fonts: Helvetica, Arial, sans-serif;
 
-$font-name: 'muli';
-$gothic: 'Century Gothic';
-$font-primary: '#{$gothic}', '#{$font-name}-regular', Helvetica, Arial, sans-serif;
-$font-primary--bold: '#{$gothic}', '#{$font-name}-bold', Helvetica, Arial, sans-serif;
+$font-name: 'semplicita';
+$font-primary-regular: '#{$font-name}-regular', $default-fonts;
+$font-primary-medium: '#{$font-name}-medium', $default-fonts;
+$font-primary-semibold: '#{$font-name}-semibold', $default-fonts;
 
 
 $primary-font-color: $grey;
