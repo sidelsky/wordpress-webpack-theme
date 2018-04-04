@@ -4,9 +4,9 @@ This is a very simple Wordpress boilerplate theme that uses Webpack to compile
 Javascript and Sass.
 
 ## Install
-In your Wordpress theme folder:
+Delete you version of wp-content. Clone this repro directly into the root of your Wordpress install. A new wp-content folder will be generated.
 ```
-$ git clone https://github.com/sidelsky/wordpress-webpack-theme
+$ git clone https://github.com/sidelsky/wordpress-webpack-theme .
 $ yarn install
 $ yarn run watch
 ```
