@@ -5,10 +5,10 @@
 * Generic
 */
 /**
-* Set lost grid to use Flexbox by default
+* Typefaces
 */
-/*
-* Web fonts
+/**
+* Set lost grid to use Flexbox by default
 */
 /*
 * Reset
@@ -19,6 +19,8 @@
 /**
 * Base
 */
+/*------------------------------------*    FONT FAMILIES
+\*------------------------------------*/
 .b_svg {
   width: 100%;
   height: 100%; }

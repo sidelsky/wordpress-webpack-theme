@@ -67,7 +67,18 @@ module.exports = {
                   presets: ["es2015"]
                }
             }
-         }
+         },
+         {	/* FONTS */
+					test: /\.(eot|ttf|woff|woff2)$/,
+					use: [{
+						loader: 'file-loader',
+						options: {
+							name: 'dist/fonts/[name].[ext]',
+							publicPath: './'
+						}
+					}]
+
+				}
       ]
    },
    plugins: [
