@@ -11,11 +11,12 @@
       $html = '';
 
       $logo_module_args = array(
-         'icon_name' => 'zuma-logo',
-         'icon_class' => NULL
+         'icon_name' => 'expand',
+         'default_class' => 'b_icon'
+         //'class' => 'b_icon'
       );
 
-      $html .= '<a href="'. home_url() .'" class="page-header__logo">';
+      $html .= '<a href="'. home_url() .'" class="m-page-header__logo">';
          $html .= Logos::render($logo_module_args);					
       $html .= '</a>';
 

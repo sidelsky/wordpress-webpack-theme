@@ -32,7 +32,7 @@
 		// 	$scriptFilename = 'app.min.js';
 		// }
 
-		wp_register_script('theme_js', THEME_URI . '/asset/' . $scriptFilename, array(), '1.1', true);
+		wp_register_script('theme_js', THEME_URI . '/assets/' . $scriptFilename, array(), '1.1', true);
 			// Localize the script with new data
 			$site_data = array(
 			'themePath' =>  THEME_URI
@@ -47,7 +47,7 @@
 
 	//Enqueue styles
 	function enqueue_styles() {
-	wp_enqueue_style('theme_css', THEME_URI . '/asset/style.css');
+	wp_enqueue_style('theme_css', THEME_URI . '/assets/style.css');
 
 	}
 ?>

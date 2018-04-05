@@ -4,9 +4,9 @@
 
 export function svgSprite() {
    const __svg__ = {
-      path: "../../img/svg/*.svg",
-      name: "asset/svg-sprite.svg"
+      path: "../../img/svg/*.svg", 
+      name: "assets/svg-sprite.svg"
    };
 
    return __svg__;
-}
+}   

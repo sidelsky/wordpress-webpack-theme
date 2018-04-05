@@ -14,7 +14,7 @@ module.exports = {
    entry: ["./app/js/app.js", "./app/scss/style.scss"],
 
    output: {
-      filename: "./asset/app.min.js"
+      filename: "./assets/app.min.js"
    },
 
    module: {
@@ -79,7 +79,7 @@ module.exports = {
                      name:
                         "wp-content/themes/" +
                         themeSlug +
-                        "/asset/fonts/[name].[ext]",
+                        "/assets/fonts/[name].[ext]",
                      publicPath: "/"
                   }
                }
@@ -103,7 +103,7 @@ module.exports = {
    },
    plugins: [
       new ExtractTextPlugin({
-         filename: "./asset/style.css",
+         filename: "./assets/style.css",
          allChunks: true
       }),
       new BrowserSyncPlugin({
@@ -121,13 +121,14 @@ module.exports = {
          // svgo options + hash: true to watch
          hash: true,
          svgoOptions: {
-            plugins: [
-               {
-                  cleanup: true,
-                  style: "display:none",
-                  xmlns: "http://www.w3.org/2000/svg"
-               }
-            ]
+          //   plugins: [
+          //      { removeDoctype: true },
+          //      { removeTitle: true },
+          //      { removeMetadata: true },
+          //      { removeComments: true },
+          //      { cleanupIDs: true },
+          //      { removeDimensions: true }
+          //  ]
          },
          prefix: "icon" + "-"
       })
