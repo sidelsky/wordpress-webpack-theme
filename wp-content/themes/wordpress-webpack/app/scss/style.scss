@@ -6,8 +6,8 @@
 * Generic
 */
 //@import 'generic/functions';
-@import 'generic/mixins';
-@import 'generic/variables';
+@import 'generic/g-mixins';
+@import 'generic/g-variables';
 
 /*
 * Reset
@@ -17,25 +17,31 @@
 /**
 * Vendors
 */
-//@import 'vendor/hamburger';
+@import 'vendor/v-include-media';
+@import 'vendor/v-reset';
 
 /**
 * Base
 */
 //@import 'base/typography';
 
-@import 'base/general';
-@import 'base/icons';
+@import 'base/b-general';
+@import 'base/b-icons';
 
 /**
 * Fonts
 */
-@import 'fonts/fonts';
+@import 'fonts/f-fonts';
+
+/**
+* Modules
+*/
+@import 'modules/m-primary-navigation';
 
 /**
 * Breakpoint
 */
-@import 'breakpoint/breakpoints';
+@import 'breakpoint/bp-breakpoints';
 
 
 .menu ul li a {
