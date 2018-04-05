@@ -122,19 +122,11 @@ module.exports = {
          hash: true,
          svgoOptions: {
             plugins: [
-<<<<<<< HEAD
-               { 
-                  cleanup: true,
-                  style: 'display:none',
-                  xmlns: 'http://www.w3.org/2000/svg'
-                },
-=======
                {
                   cleanup: true,
                   style: "display:none",
                   xmlns: "http://www.w3.org/2000/svg"
                }
->>>>>>> 0ae8ffc7fe2ab5f49ba2803d79ce89a27551d833
             ]
          },
          prefix: "icon" + "-"
