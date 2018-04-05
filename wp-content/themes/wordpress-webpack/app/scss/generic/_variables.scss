@@ -31,9 +31,9 @@ $error: $ms-red;
 $default-fonts: Helvetica, Arial, sans-serif;
 
 $font-name: 'semplicita';
-$font-primary: '#{$font-name}-regular', $default-fonts;
-$font-primary--medium: '#{$font-name}-medium', $default-fonts;
-$font-primary--semibold: '#{$font-name}-semibold', $default-fonts;
+$font-primary-regular: '#{$font-name}-regular', $default-fonts;
+$font-primary-medium: '#{$font-name}-medium', $default-fonts;
+$font-primary-semibold: '#{$font-name}-semibold', $default-fonts;
 
 
 $primary-font-color: $grey;

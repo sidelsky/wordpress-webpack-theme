@@ -7,13 +7,14 @@ const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
 const lost = require("lost");
 const SvgStore = require("webpack-svgstore-plugin");
 
+const themeSlug = "wordpress-webpack";
 const vhost = "http://littlecourt2018.localhost/";
 
 module.exports = {
    entry: ["./app/js/app.js", "./app/scss/style.scss"],
 
    output: {
-      filename: "./dist/app.min.js"
+      filename: "./asset/app.min.js"
    },
 
    module: {
@@ -68,22 +69,41 @@ module.exports = {
                }
             }
          },
-         {	/* FONTS */
-					test: /\.(eot|ttf|woff|woff2)$/,
-					use: [{
-						loader: 'file-loader',
-						options: {
-							name: 'dist/fonts/[name].[ext]',
-							publicPath: './'
-						}
-					}]
-
-				}
+         {
+            /* FONTS */
+            test: /\.(eot|ttf|woff|woff2)$/,
+            use: [
+               {
+                  loader: "file-loader",
+                  options: {
+                     name:
+                        "wp-content/themes/" +
+                        themeSlug +
+                        "/asset/fonts/[name].[ext]",
+                     publicPath: "/"
+                  }
+               }
+            ]
+         },
+         {
+            /* IMAGES */
+            test: /\.(png|jpe?g|svg)$/,
+            // exclude: /media\//,
+            use: [
+               {
+                  loader: true ? "file-loader" : "url-loader",
+                  options: {
+                     name: "assets/img/[name].[hash].[ext]",
+                     publicPath: "/"
+                  }
+               }
+            ]
+         }
       ]
    },
    plugins: [
       new ExtractTextPlugin({
-         filename: "./dist/style.css",
+         filename: "./asset/style.css",
          allChunks: true
       }),
       new BrowserSyncPlugin({
@@ -102,11 +122,19 @@ module.exports = {
          hash: true,
          svgoOptions: {
             plugins: [
+<<<<<<< HEAD
                { 
                   cleanup: true,
                   style: 'display:none',
                   xmlns: 'http://www.w3.org/2000/svg'
                 },
+=======
+               {
+                  cleanup: true,
+                  style: "display:none",
+                  xmlns: "http://www.w3.org/2000/svg"
+               }
+>>>>>>> 0ae8ffc7fe2ab5f49ba2803d79ce89a27551d833
             ]
          },
          prefix: "icon" + "-"
