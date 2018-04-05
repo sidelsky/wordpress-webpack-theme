@@ -70,6 +70,8 @@
 			 * Page hero
 			 */
 			$post_thumbnail_url = get_the_post_thumbnail_url();
+			$hero_title_1st_line = get_field( 'hero_title_1st_line' );
+			$hero_title_2nd_line = get_field( 'hero_title_2nd_line' );
 
 			if( $post_thumbnail_url ) {
 				$background = ' style="background-image:url('. $post_thumbnail_url .')" ';
@@ -77,7 +79,16 @@
 
 			echo '<section class="u-section">';
 				echo '<div class="m-hero u-row--medium" '. $background .' >';
-				
+
+				if($hero_title_1st_line) {
+					echo '<h1 class="m-hero__title-container">';
+						echo '<span class="m-hero__title m-hero__title--top">'. $hero_title_1st_line .'</span>';
+						if($hero_title_2nd_line) {
+							echo '<span class="m-hero__title m-hero__title--bottom">'. $hero_title_2nd_line .'</span>';	
+						}
+					echo '</h1>';
+				}
+
 				echo '</div>';
 			echo '</section>'
 
