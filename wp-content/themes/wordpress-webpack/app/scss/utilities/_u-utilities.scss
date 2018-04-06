@@ -1,0 +1,43 @@
+@lost flexbox flex;
+
+.u-section {
+   max-width: 100%;
+   //lost-column: 12/12;
+   outline: solid red 1px;
+}
+
+.u-row {
+   
+   margin: 0 auto;
+
+  &--full-width {
+
+   max-width: 100%;
+   outline: solid blue 1px;
+
+  }
+
+  &--large {
+
+    max-width: 90%;
+    outline: solid blue 1px;
+ 
+   }
+
+  &--medium {
+
+   //lost-center: 1280px;
+   max-width: 1280px;
+   outline: solid purple 1px;
+
+  }
+
+  &--small {
+
+   //lost-center: 1020px;
+   max-width: 1020px;
+   outline: solid Green 1px;
+   
+  }
+  
+}

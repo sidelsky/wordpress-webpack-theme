@@ -1,0 +1,30 @@
+.m-page-header {
+
+   display: table;
+   width: 100%;
+   height: 150px;
+   
+   // Logo container
+   &__logo-container {
+      
+      width: 80px;
+      display: table-cell;
+      vertical-align: middle;
+      fill: palette(bw, base);
+
+   }
+   
+   a {
+      color: currentColor;
+      display: block;
+   }
+
+   // Logo
+   &__logo {
+      
+      width: 80px;
+      height: 20px;
+
+   }
+
+}

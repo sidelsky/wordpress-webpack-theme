@@ -1,0 +1,47 @@
+.m-primary-navigation {
+
+   font-family: font-family(primary, semibold);
+   color: palette(primary, dark);
+   text-transform: uppercase;
+   display: table-cell;
+   vertical-align: middle;
+   min-width: 940px;
+   
+   ul {
+
+      margin: 0;
+      padding: 6px 0 0 0;
+      text-align: right;
+   }
+   
+   // List item
+   .page_item {
+     
+      @include set-font-size(1.25rem, 1.25rem, 1.25rem);
+      display: inline-block;
+      padding-left: $spacing--large-xx;
+      letter-spacing: 0.15rem;
+   
+      a {
+         
+         color: currentColor;
+         cursor: pointer;
+
+         &:hover {
+
+            color: palette(primary, light);
+
+         }
+
+      }
+
+   }
+
+   // Current active menu item
+   .current_page_item {
+
+      color: palette(primary, light);
+
+   }
+
+}

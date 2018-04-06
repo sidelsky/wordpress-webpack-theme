@@ -1,0 +1,64 @@
+.m-hero {
+
+   @include aspect-ratio(4,3);
+   background-size: cover;
+   background-position: center center;
+   background-repeat: no-repeat;
+   margin: 0 auto;
+   lost-align: center;
+
+   // Title container
+   &__title-container {
+
+      z-index: 1;
+      @include set-font-size(1.6rem, 2.4rem, 3rem);
+      text-transform: uppercase;
+      color: palette(secondary, base);
+      text-align: center;
+      
+      @include media('>tablet') { 
+         @include aspect-ratio(3.5,2);
+         position: absolute;
+         width: 60%;
+      }
+
+   }
+
+   &__title {
+
+         display: block;
+         z-index: 1;
+         position: absolute;
+         left: 0;
+         right: 0;
+
+         &--top {
+            top: 20%;
+         }
+
+         &--bottom {
+            bottom: 20%;
+         }
+
+         // Tablet upwards
+         @include media('>tablet') {
+
+            left: 0;
+            right: 0;
+            position: absolute;
+   
+            &--top {
+               top: 0;
+            }
+   
+            &--bottom {
+               bottom: 0;
+            }
+   
+
+         }
+
+   }
+
+
+}
