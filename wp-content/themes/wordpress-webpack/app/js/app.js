@@ -3,8 +3,9 @@
 
 //"use strict";
 
-import { createLogger } from "./scripts/utils";
-import { svgSprite } from "./scripts/svg-sprite";
+import { createLogger } from './scripts/utils';
+import { svgSprite } from './scripts/svg-sprite';
+import init_vimeo from './scripts/video';
 
 /**
  * Vendor scripts

@@ -172,7 +172,7 @@ html {
   -moz-osx-font-smoothing: grayscale; }
 
 body {
-  background-color: #fcfbfa;
+  background-color: #f5f3f0;
   color: #000;
   font-size: 1rem;
   line-height: 1.33;
@@ -230,6 +230,15 @@ a {
   content: '';
   display: table; }
 
+::-moz-selection {
+  background: #cbc9c7; }
+
+::selection {
+  background: #cbc9c7; }
+
+::-moz-selection {
+  background: #827c77; }
+
 .b_svg {
   position: absolute;
   left: 0;
@@ -253,7 +262,62 @@ a {
 * Fonts
 */
 /**
+ * @license
+ * MyFonts Webfont Build ID 3551250, 2018-04-04T05:42:26-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: SemplicitaPro-Bold by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/bold/
+ * 
+ * Webfont: SemplicitaPro-Light by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/light/
+ * 
+ * Webfont: SemplicitaPro-BoldItalic by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/bold-italic/
+ * 
+ * Webfont: SemplicitaPro-LtIt by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/light-italic/
+ * 
+ * Webfont: SemplicitaPro-Italic by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/italic/
+ * 
+ * Webfont: SemplicitaPro-MedIt by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/medium-italic/
+ * 
+ * Webfont: SemplicitaPro-Medium by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/medium/
+ * 
+ * Webfont: SemplicitaPro-SemibdIt by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/semibold-italic/
+ * 
+ * Webfont: SemplicitaPro by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/regular/
+ * 
+ * Webfont: SemplicitaPro-Semibold by Canada Type
+ * URL: https://www.myfonts.com/fonts/canadatype/semplicita-pro/semibold/
+ * 
+ * 
+ * License: https://www.myfonts.com/viewlicense?type=web&buildid=3551250
+ * Licensed pageviews: 100,000
+ * Webfonts copyright: Copyright &#x00A9; 2011 Canada Type. Designed by Patrick Griffin
+ * &amp; Bill Troop. All rights reserved.
+ * 
+ * © 2018 MyFonts Inc
+*/
+/**
 * Font Families
+*/
+/**
+* $font-regular: normal;
+* $font-thin: 100;
+* $font-light: 200;
+* $font-bold: bold;
+* $font-medium: 500;
 */
 /**
 * Semplicita regular
@@ -290,11 +354,10 @@ a {
 */
 .m-primary-navigation {
   font-family: "semplicita-semibold", Helvetica, Arial, sans-serif;
-  color: #6f6c65;
+  color: #7a7470;
   text-transform: uppercase;
   display: table-cell;
-  vertical-align: middle;
-  min-width: 940px; }
+  vertical-align: middle; }
   .m-primary-navigation ul {
     margin: 0;
     padding: 6px 0 0 0;
@@ -314,9 +377,9 @@ a {
       color: currentColor;
       cursor: pointer; }
       .m-primary-navigation .page_item a:hover {
-        color: #c1bfbb; }
+        color: #cbc9c7; }
   .m-primary-navigation .current_page_item {
-    color: #c1bfbb; }
+    color: #cbc9c7; }
 
 .m-hero {
   position: relative;
@@ -403,11 +466,60 @@ a {
     width: 80px;
     height: 20px; }
 
+.m-large-copy {
+  padding: 8rem 0;
+  color: #827c77; }
+  .m-large-copy p {
+    font-size: 2.8rem; }
+    @media (min-width: 376px) {
+      .m-large-copy p {
+        font-size: 4.8rem; } }
+    @media (min-width: 769px) {
+      .m-large-copy p {
+        font-size: 7.2rem; } }
+    .m-large-copy p br {
+      display: none;
+      visibility: hidden; }
+  @media (min-width: 376px) {
+    .m-large-copy {
+      padding: 10rem 0; }
+      .m-large-copy br {
+        display: inline;
+        visibility: visible; } }
+  @media (min-width: 1025px) {
+    .m-large-copy {
+      padding-top: 17.6rem; }
+      .m-large-copy p br {
+        display: inline;
+        visibility: visible; } }
+
+.m-video-player {
+  position: relative; }
+  .m-video-player__content {
+    position: relative;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    outline: solid 1px red;
+    z-index: 2;
+    position: absolute;
+    max-width: 1020px; }
+  .m-video-player__poster {
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center; }
+
 /**
 * Utilities
 */
 .u-section {
-  max-width: 100%;
+  width: 100%;
   outline: solid red 1px; }
 
 .u-row {
@@ -424,10 +536,176 @@ a {
   .u-row--small {
     max-width: 1020px;
     outline: solid Green 1px; }
+    @media (max-width: 1279px) {
+      .u-row--small {
+        padding-left: 3rem;
+        padding-right: 3rem; } }
+
+/*------------------------------------*    VISIBILITY UTILITIES
+\*------------------------------------*/
+/**
+* Uppercase type
+*/
+.u-text-transform--uppercase {
+  text-transform: uppercase; }
 
 /**
-* Breakpoint
+  * Font weight semibold
+  */
+.font-family--semibold,
+strong {
+  font-family: "semplicita-semibold", Helvetica, Arial, sans-serif; }
+
+/* Screen reader
+ -----------------------------------*/
+.u-sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px; }
+
+/* Centering
+ -----------------------------------*/
+.u-center-block {
+  margin-left: auto;
+  margin-right: auto; }
+
+/* Basic show/hide classes
+ -----------------------------------*/
+.u-hidden {
+  display: none !important; }
+
+.u-show {
+  display: block !important; }
+
+html.hidden {
+  display: block !important; }
+
+/**
+ * Responsive hide-below
+ *
+ * Uses media max-width so will use the value specified in _variables and will hide content
+ * up to that point
+
+ $max-width-small: max-width 540px;
+ $max-width-medium: max-width 768px;
+ $max-width-large: max-width 1024px;
+ $max-width-x-large: max-width 1280px;
+ $max-width-xx-large: max-width 1600px;---------------*/
+/*
+.u-hide-below--small {
+
+    @include breakpoint($max-width-small) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--medium {
+
+    @include breakpoint($max-width-medium) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--large {
+
+    @include breakpoint($max-width-large) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--huge {
+
+    @include breakpoint($max-width-x-large) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--massive {
+
+    @include breakpoint($max-width-xx-large) {
+        display: none!important;
+    }
+
+}
+
 */
-.menu ul li a {
-  font-family: "semplicita-regular", Helvetica, Arial, sans-serif;
-  font-size: 36px; }
+/**
+ * Responsive hide-above
+ *
+ * Uses media min-width so will use the value specified in _variables and will hide content
+ * from that point and above
+
+ $small: 540px;
+ $medium: 768px;
+ $large: 1024px;
+ $x-large: 1280px;
+ $xx-large: 1600px;
+ -----------------------------------*/
+/*
+.u-hide-above--small {
+
+    @include breakpoint($small) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--medium {
+
+    @include breakpoint($medium) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--large {
+
+    @include breakpoint($large) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--huge {
+
+    @include breakpoint($x-large) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--massive {
+
+    @include breakpoint($xx-large) {
+        display: none!important;
+    }
+
+}
+
+*/
+.u-iframe {
+  position: relative; }
+  .u-iframe::before {
+    content: '';
+    display: block;
+    padding-top: 56.25%;
+    width: 100%; }
+  > .u-iframe__canvas {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0; }
+  .u-iframe iframe {
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%; }

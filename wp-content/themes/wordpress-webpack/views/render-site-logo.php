@@ -1,6 +1,6 @@
 <?php
 
-   $file = '../../classes/logos.php';
+   $file = '../../classes/class-logo.php';
    require_once __DIR__ . $file;
 
    /**

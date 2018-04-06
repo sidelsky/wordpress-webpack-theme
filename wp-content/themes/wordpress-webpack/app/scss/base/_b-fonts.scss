@@ -1,9 +1,0 @@
-/*------------------------------------*\
-    FONT FAMILIES
-\*------------------------------------*/
-$font-name: 'semplicita';
-$file-path: './fonts/#{$font-name}/';
-@include web-font('#{$font-name}-regular', '#{$file-path}', '#{$font-name}-regular');
-@include web-font('#{$font-name}-medium', '#{$file-path}', '#{$font-name}-medium');
-@include web-font('#{$font-name}-semibold', '#{$file-path}', '#{$font-name}-semibold');
-//fonts/semplicita/semplicita-medium

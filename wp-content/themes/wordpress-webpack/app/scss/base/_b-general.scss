@@ -86,6 +86,14 @@ a {
 }
 
 
+::selection {
+  background: palette(primary, light);
+}
+
+::-moz-selection {
+  background: palette(primary, base);
+}
+
 
 
 // Bootstrap-style container

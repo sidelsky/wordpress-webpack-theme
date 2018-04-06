@@ -17,19 +17,6 @@
 }
 
 
-// @mixin set-font-size($small-font: '1.5rem', $medium-font: '1.8rem', $large-font: '2.5rem') {
-
-// 	font-size: #{$small-font};
-
-// 	@include breakpoint($medium) {
-// 		font-size: #{$medium-font};
-// 	}
-
-// 	@include breakpoint($large) {
-// 		font-size: #{$large-font};
-// 	}
-// }
-
 @mixin set-font-size($small-font: '1.5rem', $medium-font: '1.8rem', $large-font: '2.5rem') {
 
 	font-size: #{$small-font};
