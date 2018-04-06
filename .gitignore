@@ -1,11 +1,3 @@
-#Do not ignore these...
-
-!.gitignore
-!wp-content/*
-!wp-content/mu-plugins
-!README
-!README.md
-
 #Ignore these...
 
 /*
@@ -17,3 +9,14 @@ wp-content/plugins
 wp-content/plugins/*
 wp-content/themes/wordpress-webpack/.env
 wp-content/themes/wordpress-webpack/vendor
+
+
+#Do not ignore these...
+
+!.gitignore
+!wp-content/*
+!wp-content/mu-plugins
+!README
+!README.md
+!wp-content/themes/wordpress-webpack
+
