@@ -1,0 +1,10 @@
+.m-brand-logos {
+   lost-flex-container: row;
+
+   &__logo {
+      lost-column: 1/5;
+      lost-align: center;
+      padding: $spacing--small;
+   }
+
+}

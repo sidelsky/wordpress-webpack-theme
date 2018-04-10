@@ -1,20 +1,6 @@
-#Ignore these...
-
-/*
 wp-content/uploads/*
 wp-content/plugins/*
 wp-content/themes/wordpress-webpack/.env
 wp-content/themes/wordpress-webpack/vendor
-
-#Do not ignore these...
-!.gitignore
-!wp-content/*
-!wp-content/mu-plugins/*
-!README
-!README.md
-!wp-content/themes/wordpress-webpack/*
-
-#Ignore these...
 wp-content/themes/wordpress-webpack/node_modules
 wp-content/themes/wordpress-webpack/yarn-error.log
-

@@ -1,0 +1,166 @@
+/*------------------------------------*\
+    VISIBILITY UTILITIES
+\*------------------------------------*/
+
+/**
+* Uppercase type
+*/
+.u-text-transform--uppercase {
+    text-transform: uppercase;
+  }
+  
+  /**
+  * Font weight semibold
+  */
+  .font-family--semibold,
+  strong {
+    font-family: font-family(primary, semibold);
+  }
+
+/* Screen reader
+ -----------------------------------*/
+.u-sr-only {
+    border: 0;
+    clip: rect(0,0,0,0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+
+/* Centering
+ -----------------------------------*/
+.u-center-block {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+
+/* Basic show/hide classes
+ -----------------------------------*/
+.u-hidden {
+    display: none!important;
+}
+
+.u-show {
+    display: block!important;
+}
+
+// Modernizer will add a hidden class to the HTML tag so this is here to counter that rule on the HTML tag
+html.hidden {
+    display: block!important;
+}
+
+
+
+/**
+ * Responsive hide-below
+ *
+ * Uses media max-width so will use the value specified in _variables and will hide content
+ * up to that point
+
+ $max-width-small: max-width 540px;
+ $max-width-medium: max-width 768px;
+ $max-width-large: max-width 1024px;
+ $max-width-x-large: max-width 1280px;
+ $max-width-xx-large: max-width 1600px;---------------*/
+
+ /*
+.u-hide-below--small {
+
+    @include breakpoint($max-width-small) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--medium {
+
+    @include breakpoint($max-width-medium) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--large {
+
+    @include breakpoint($max-width-large) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--huge {
+
+    @include breakpoint($max-width-x-large) {
+        display: none!important;
+    }
+
+}
+.u-hide-below--massive {
+
+    @include breakpoint($max-width-xx-large) {
+        display: none!important;
+    }
+
+}
+
+*/
+
+/**
+ * Responsive hide-above
+ *
+ * Uses media min-width so will use the value specified in _variables and will hide content
+ * from that point and above
+
+ $small: 540px;
+ $medium: 768px;
+ $large: 1024px;
+ $x-large: 1280px;
+ $xx-large: 1600px;
+ -----------------------------------*/
+
+ /*
+.u-hide-above--small {
+
+    @include breakpoint($small) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--medium {
+
+    @include breakpoint($medium) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--large {
+
+    @include breakpoint($large) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--huge {
+
+    @include breakpoint($x-large) {
+        display: none!important;
+    }
+
+}
+
+.u-hide-above--massive {
+
+    @include breakpoint($xx-large) {
+        display: none!important;
+    }
+
+}
+
+*/

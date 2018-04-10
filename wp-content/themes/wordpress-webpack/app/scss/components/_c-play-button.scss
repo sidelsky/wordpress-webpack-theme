@@ -1,0 +1,28 @@
+.c-play-button {
+   lost-align: center;
+   $dimensions: 190px;
+   width: $dimensions;
+   height: $dimensions;
+   border-radius: 50%;
+   background-color: palette(bw, white);
+   color: palette(bw, black);
+   text-transform: uppercase;
+   @include set-font-size(1.0rem, 2.0rem, 3.0rem);
+   font-family: $font-primary-semibold;
+   letter-spacing: .3rem;
+   @include vertical-align(absolute, 50%, 100%, 1);
+   transition: all ease-in-out .2s;
+
+   &__title {
+      color: currentColor;
+      display: block;
+      padding-top: $spacing--tiny;
+   }
+
+   // Hover
+   &:hover {
+      cursor: pointer;
+      @include vertical-align(absolute, 50%, 100%, .97);
+      background-color: palette(primary, light);
+   }
+}

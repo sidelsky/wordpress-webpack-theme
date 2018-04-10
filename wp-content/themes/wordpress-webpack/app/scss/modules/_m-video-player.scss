@@ -1,0 +1,36 @@
+.m-video-player {
+   lost-align: center;
+   
+   &__content {
+    opacity: 1;
+    outline: solid 1px red;
+    z-index: 2;
+    position: absolute;
+	width: 100%;
+	transition: ease-out opacity 500ms;
+   }
+
+   &__poster {
+	opacity: 1;
+	transition: ease-out opacity 500ms;
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+   }   
+
+
+}
+
+.isPlaying > .m-video-player__poster,
+.isPlaying > .m-video-player__content {
+
+    opacity: 0;
+
+}
+

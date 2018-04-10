@@ -1,0 +1,36 @@
+.menu-footer-navigation-container {
+   display: table-cell;
+   vertical-align: middle;
+   padding: 0 0 0 $spacing--tiny;
+
+   .site-nav__menu {
+      margin: 0;
+      padding: 0;
+      text-align: left;
+   }
+
+   // List item
+   .menu-item {
+      font-family: font-family(primary, semibold);
+      display: inline-block;
+      @include set-font-size(1.0rem, 1.0rem, 1.0rem);
+      padding: 0 $spacing--tiny 0 0;
+
+      a {
+         color: currentColor;
+         cursor: pointer;
+
+         &:hover {
+            color: palette(primary, light);
+         }
+
+      }
+
+   }
+
+   // Current active menu item
+   .current_page_item {
+      color: palette(primary, light);
+   }
+
+}
