@@ -95,4 +95,28 @@
       echo '</section>';
    }
 
+   /**
+    * Copy & image
+    */
+   $copy = get_field( 'copy' );
+   $image = get_field( 'image' )['url'];
+   $link_title = get_field( 'link_title' );
+   $link_url = get_field( 'link_url' );
+
+   echo '<section class="u-section">';
+      echo '<div class="u-row u-row--small">';
+         echo '<div class="m-copy-image">';
+            echo '<div class="m-copy-image__column">';
+               echo $copy;
+               echo '<a href="'. $link_url .'" class="m-copy-image__link">'. $link_title .'</a>';
+            echo '</div>';
+            echo '<div class="m-copy-image__column">';
+               echo '<img src="'. $image .'">';
+            echo '</div>';
+         echo '</div>';
+      echo '</div>';
+   echo '</section>';
+
+   
+
 include("footer.php");

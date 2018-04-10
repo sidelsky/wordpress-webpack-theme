@@ -5,6 +5,15 @@
       lost-column: 1/5;
       lost-align: center;
       padding: $spacing--small;
+
+      &:first-child {
+         padding-left: 0;
+      }
+
+      &:last-child {
+         padding-right: 0;
+      }
+
    }
 
 }

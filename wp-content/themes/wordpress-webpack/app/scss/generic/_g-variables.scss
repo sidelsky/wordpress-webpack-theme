@@ -22,7 +22,8 @@ $grey: #777777;
 */
 $primary: #827c77;
 $secondary: #668083;
-$background-color: #f5f3f0;
+$tertiary: #a68c5e;
+$background-color: #fcfbfa;
 
 /**
 * Colour Palette
@@ -47,6 +48,11 @@ $palettes: (
       base: $secondary,
       light: lighten($secondary, 25%),
       dark: darken($secondary, 25%),
+      ),
+   tertiary: (
+      base: $tertiary,
+      light: lighten($tertiary, 25%),
+      dark: darken($tertiary, 25%),
       )
    );
 

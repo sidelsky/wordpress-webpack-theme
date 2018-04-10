@@ -8,6 +8,7 @@
 import { createLogger } from "./scripts/utils";
 import { svgSprite } from "./scripts/svg-sprite";
 import init_video from "./scripts/video";
+import init_magic_line from "./scripts/magic-line";
 
 /**
  * Vendor scripts
@@ -19,8 +20,6 @@ log.setLevel(log.DEBUG);
 function init() {
    log.info("Init called");
 }
-
-//init();
 
 window.enhance_website = function() {
    log.debug("window.enhance_website", document.readyState);

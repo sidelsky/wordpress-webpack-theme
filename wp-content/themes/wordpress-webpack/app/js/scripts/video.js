@@ -5,18 +5,21 @@
 
 import Player from "@vimeo/player";
 
-("use strict");
+let videoPlayer = document.querySelector(".js-video-player");
+let iframe = document.querySelector("iframe");
+let playButton = document.querySelector(".js-play-button");
 
 export function init_video() {
-   vimeo_player();
+   
+   if(iframe) {
+      vimeo_player();
+   }
+   
 }
 
-export function vimeo_player() {
-   let videoPlayer = document.querySelector(".js-video-player");
-   let iframe = document.querySelector("iframe");
-   let player = new Player(iframe);
-   let playButton = document.querySelector(".js-play-button");
+function vimeo_player() {
    //let pauseButton = document.querySelector(".pause-button");
+   let player = new Player(iframe);
 
    playButton.onclick = playVideo;
    //pauseButton.onclick = pauseVideo;

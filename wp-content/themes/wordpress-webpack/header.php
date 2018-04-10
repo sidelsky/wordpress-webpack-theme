@@ -52,8 +52,8 @@
 			/**
 			 * Page header
 			 */
-			echo '<section class="u-section">';
-				echo '<header class="m-page-header u-row u-row--small">';
+			echo '<section class="u-section m-page-header">';
+				echo '<header class="m-page-header__inner-container u-row u-row--small">';
 
 					echo '<div class="m-page-header__logo-container">';
 

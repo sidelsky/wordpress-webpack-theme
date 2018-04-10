@@ -29,17 +29,30 @@
             $background = ' style="background-image:url('. $args['post_thumbnail_url'] .')" ';
          }
 
-         $html = '';
-
          $html .= '<section class="u-section">';
             $html .= '<div class="m-hero u-row--full-width" '. $background .' >';
 
+            /**
+             * Check to see if it's image only and no copy
+            */
             if( $imageOnly == FALSE ) {
                $html .= '<h1 class="m-hero__title-container">';
-                  $html .= '<span class="m-hero__title m-hero__title--top">'. $args['hero_title_1st_line'] .'</span>';
-                  $html .= '<span class="m-hero__title m-hero__title--bottom">'. $args['hero_title_2nd_line'] .'</span>';
+                  /**
+                   * If page is - Front page / Home
+                   */
+                  if( is_front_page() ) {
+                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--top">'. $args['hero_title_1st_line'] .'</span>';
+                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--bottom">'. $args['hero_title_2nd_line'] .'</span>';
+                  }
+                  /**
+                   * If page is — Zuma Halo
+                   */
+                  if( is_page( 'Zuma Halo' ) ) {
+                     $html .= '<span class="m-hero__title m-hero__title--zuma-halo m-hero__title--zuma-halo--top">' . '<strong>' . $args['hero_title_1st_line'] . '</strong>' . '<br>' . $args['hero_title_2nd_line'] . '</span>';
+                  }
                $html .= '</h1>';
             }
+
             $html .= '</div>';
          $html .= '</section>';
 

@@ -1,16 +1,17 @@
 .m-page-header {
+   background-color: palette(bw, white);
 
-   display: table;
-   width: 100%;
-   height: 150px;
+   &__inner-container {
+      display: table;
+      width: 100%;
+      height: 150px;
+   }
    
    // Logo container
    &__logo-container {
-      
       width: 80px;
       display: table-cell;
       vertical-align: middle;
-
    }
    
    &__logo {
