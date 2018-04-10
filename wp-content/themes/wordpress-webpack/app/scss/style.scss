@@ -27,10 +27,18 @@
 * Modules
 */
 @import 'modules/m-primary-navigation';
+@import 'modules/m-footer-navigation';
 @import 'modules/m-hero';
 @import 'modules/m-page-header';
 @import 'modules/m-large-copy';
 @import 'modules/m-video-player';
+@import 'modules/m-brand-logos';
+@import 'modules/m-page-footer';
+
+/**
+* Components
+*/
+@import 'components/c-play-button';
 
 /**
 * Utilities

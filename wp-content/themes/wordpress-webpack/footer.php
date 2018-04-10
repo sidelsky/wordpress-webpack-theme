@@ -1,14 +1,63 @@
-			<footer class="page-footer" role="contentinfo">
+<?php
+			/**
+			 * Footer
+			 */
+			echo '<footer class="u-section m-page-footer" role="contentinfo">';
+				echo '<div class="u-row u-row--small">';
+					echo '<div class="m-page-footer__container">';
 
-				<p class="page-footer__copyright">
-					&copy; <?php echo date('Y'); ?> Copyright <?php bloginfo('name'); ?>
-				</p>
+						/**
+						* Render site logo
+						*/
+						$logo_module_args = [
+							'class' => 'm-page-footer__logo'
+						];
+						echo '<div class="m-page-footer__logo-container">';
+							echo render_zuma_logo( $logo_module_args );
+						echo '</div>';
 
-			</footer>
+						echo '<div class="m-page-footer__social-icons">';
+							foreach( $theme_content['social'] as $content ) {
+								echo '<a href="' . $content['url'] . '" target="'. $content['target'] .'">';
+									$svg_icon_args = [
+										'icon' => $content['icon']
+									];
+									echo Svg_icon::render( $svg_icon_args );
+								echo '</a>';
+							}
+						echo '</div>';
+					echo '</div>';
 
-		</div> <!-- page-wrap END -->
+					echo '<div class="m-page-footer__copyright-container">';
+						
+						/**
+						* Copyright details
+						*/
+						echo '<div class="m-page-footer__copyright">';
+							echo $theme_content['copyright']['details'];
+						echo '</div>';
 
-		<?php wp_footer(); ?>
+					/**
+					 * Footer navigation
+					 */
+					$args = array(
+						'theme_location'  => 'tertiary-navigation',
+						'container'     	=>	'nav',
+						'echo'          	=>	true,
+						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
+					);
+					wp_nav_menu($args);
 
+				echo '</div>';
+			echo '</footer>';
+
+		/**
+		 * END: page-wrap
+		 */
+		echo '</div> ';
+
+		wp_footer();
+
+		?>
 	</body>
 </html>

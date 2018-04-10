@@ -10,21 +10,14 @@
       width: 80px;
       display: table-cell;
       vertical-align: middle;
-      fill: palette(bw, base);
 
    }
    
-   a {
-      color: currentColor;
-      display: block;
-   }
-
-   // Logo
    &__logo {
-      
+      display: block;
       width: 80px;
       height: 20px;
-
+      fill: $black;
    }
 
 }
