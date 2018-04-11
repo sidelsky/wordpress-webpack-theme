@@ -27,6 +27,7 @@
     "file-loader": "^1.1.11",
     "jshint-loader": "^0.8.4",
     "postcss-loader": "^2.0.8",
+    "remodal": "^1.1.1",
     "sass-breakpoints": "^2.1.0",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.0",

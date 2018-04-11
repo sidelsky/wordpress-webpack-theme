@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "0feb26697b015dbe59b339741e48d1e7",
+    "content-hash": "99545495fdb7766d9e0b2561ddb322dc",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -297,7 +297,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/akismet.zip?timestamp=1521562757",
+                "url": "https://downloads.wordpress.org/plugin/akismet.zip?timestamp=1522858580",
                 "reference": null,
                 "shasum": null
             },
@@ -306,7 +306,27 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/akismet/",
-            "time": "2018-03-20T16:19:17+00:00"
+            "time": "2018-04-04T17:16:20+00:00"
+        },
+        {
+            "name": "wpackagist-plugin/duplicate-page",
+            "version": "2.6",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/duplicate-page/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/duplicate-page.zip?timestamp=1522322868",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/duplicate-page/"
         }
     ],
     "packages-dev": [],

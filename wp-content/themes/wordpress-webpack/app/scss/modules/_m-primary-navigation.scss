@@ -31,7 +31,8 @@
    }
 
    // Current active menu item
-   .current_page_item {
+   .current_page_item,
+   .current-page-ancestor {
       color: palette(primary, light);
    }
 

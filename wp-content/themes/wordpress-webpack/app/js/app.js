@@ -9,6 +9,7 @@ import { createLogger } from "./scripts/utils";
 import { svgSprite } from "./scripts/svg-sprite";
 import init_video from "./scripts/video";
 import init_magic_line from "./scripts/magic-line";
+import init_remodal from "./scripts/remodal"
 
 /**
  * Vendor scripts

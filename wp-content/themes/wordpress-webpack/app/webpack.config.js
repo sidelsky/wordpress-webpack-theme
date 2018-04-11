@@ -121,14 +121,14 @@ module.exports = {
          // svgo options + hash: true to watch
          hash: true,
          svgoOptions: {
-          //   plugins: [
-          //      { removeDoctype: true },
-          //      { removeTitle: true },
-          //      { removeMetadata: true },
-          //      { removeComments: true },
-          //      { cleanupIDs: true },
-          //      { removeDimensions: true }
-          //  ]
+            plugins: [
+               { removeDoctype: true },
+               { removeTitle: true },
+               { removeMetadata: true },
+               { removeComments: true },
+               { cleanupIDs: true },
+               { removeDimensions: false }
+           ]
          },
          prefix: "icon" + "-"
       })

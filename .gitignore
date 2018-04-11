@@ -1,6 +1,7 @@
+database
 wp-content/uploads/*
 wp-content/plugins/*
-wp-content/themes/wordpress-webpack/.env
+wp-content/.env
 wp-content/themes/wordpress-webpack/vendor
 wp-content/themes/wordpress-webpack/node_modules
 wp-content/themes/wordpress-webpack/yarn-error.log

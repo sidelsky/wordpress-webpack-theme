@@ -3,6 +3,8 @@
 */
 @import 'vendor/v-reset';
 @import 'vendor/v-include-media';
+@import 'vendor/v-remodal-default-theme';
+@import 'vendor/v-remodal';
 
 /**
 * Generic
@@ -36,6 +38,8 @@
 @import 'modules/m-copy-image';
 @import 'modules/m-page-footer';
 @import 'modules/m-sub-navigation';
+@import 'modules/m-sub-navigation';
+@import 'modules/m-detail-group';
 
 /**
 * Components

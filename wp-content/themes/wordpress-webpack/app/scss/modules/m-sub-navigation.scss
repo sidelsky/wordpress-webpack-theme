@@ -1,4 +1,4 @@
-.m-sub-navigation{ 
+.m-sub-navigation { 
 	margin: 96px auto;
 }
 
@@ -8,38 +8,66 @@
 	list-style: none; 
    position: relative; 
    lost-flex-container: row;
-
+   
    li {
       display: inline-block;
       text-align: center;
       lost-column: 1/3;
-      outline: salmon 1px solid;
+      color: palette(tertiary, base);
+      transition: color ease-in-out 300ms;
+
+
+      a {
+         color: currentColor;
+         font-size: 14px; 
+         float: left;
+         text-decoration: none;
+         text-transform: uppercase;
+         display: block;
+         width: 100%;
+         padding-bottom: $spacing--large-xx;
+      }
+
+      span {
+         display: block;
+      }
+
+      &:hover {
+         //color: palette(tertiary, dark);
+      }
+
    }
 
-   a {
-      color: #bbb; 
-      font-size: 14px; 
-      float: left;
-      padding: 6px 10px 4px 10px;
-      text-decoration: none;
-      text-transform: uppercase;
-      display: block;
-      width: 100%;
-   }
-
-   span {
-      display: block;
+   /**
+   * Current active manu item
+   */
+   .current_page_item {
+      //color: palette(tertiary, dark);
    }
 
 }
  
 
-#magic-line { 
+.magic-line { 
 	position: absolute;
 	bottom: -2px; 
 	left: 0; 
 	width: 100px; 
-	height: 2px; 
-	background: #fe4902;
+	height: 5px; 
+   background-color: currentColor;
+   overflow: hidden;
+
+   &:after {
+      content: '';
+      display: block;
+      width: 0; 
+      height: 0; 
+      $dimensions: 5px;
+      border-left: $dimensions solid transparent;
+      border-right: $dimensions solid transparent;
+      border-top: $dimensions solid $white;
+      position: relative;
+      margin: 0 auto;
+   }
 }
  
