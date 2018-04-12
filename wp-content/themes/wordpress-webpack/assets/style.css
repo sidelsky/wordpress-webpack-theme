@@ -78,9 +78,6 @@ table {
           animation-name: remodal-overlay-closing-keyframes; }
 
 /* Default theme styles of the wrapper */
-.remodal-wrapper {
-  padding: 10px 10px 0; }
-
 /* Default theme styles of the modal dialog */
 .remodal {
   -webkit-box-sizing: border-box;
@@ -91,7 +88,9 @@ table {
   -webkit-transform: translate3d(0, 0, 0);
           transform: translate3d(0, 0, 0);
   color: #2b2e38;
-  background: #fff; }
+  background: #fff;
+  -webkit-box-shadow: 0px 15px 75px -15px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 15px 75px -15px rgba(0, 0, 0, 0.75); }
 
 .remodal.remodal-is-opening,
 .remodal.remodal-is-closing {
@@ -267,7 +266,7 @@ table {
    ========================================================================== */
 @media only screen and (min-width: 641px) {
   .remodal {
-    max-width: 700px; } }
+    max-width: 100%; } }
 
 /* IE8
    ========================================================================== */
@@ -299,7 +298,8 @@ html.remodal-is-locked {
   right: -5000px;
   bottom: -5000px;
   left: -5000px;
-  display: none; }
+  display: none;
+  background-color: rgba(255, 255, 255, 0.7); }
 
 /* Necessary styles of the wrapper */
 .remodal-wrapper {
@@ -521,13 +521,13 @@ a {
   display: table; }
 
 ::-moz-selection {
-  background: #cbc9c7; }
+  background: #c1bfbb; }
 
 ::selection {
-  background: #cbc9c7; }
+  background: #c1bfbb; }
 
 ::-moz-selection {
-  background: #827c77; }
+  background: #77746c; }
 
 sub, sup {
   /* Specified in % so that the sup/sup is the
@@ -674,7 +674,7 @@ sub {
     text-align: right; }
   .menu-primary-navigation-container .menu-item {
     font-family: "semplicita-semibold", Helvetica, Arial, sans-serif;
-    color: #7a7470;
+    color: #6f6c65;
     text-transform: uppercase;
     font-size: 1.25rem;
     display: inline-block;
@@ -690,10 +690,10 @@ sub {
       color: currentColor;
       cursor: pointer; }
       .menu-primary-navigation-container .menu-item a:hover {
-        color: #cbc9c7; }
+        color: #c1bfbb; }
   .menu-primary-navigation-container .current_page_item,
   .menu-primary-navigation-container .current-page-ancestor {
-    color: #cbc9c7; }
+    color: #c1bfbb; }
 
 .menu-footer-navigation-container {
   display: table-cell;
@@ -718,9 +718,9 @@ sub {
       color: currentColor;
       cursor: pointer; }
       .menu-footer-navigation-container .menu-item a:hover {
-        color: #cbc9c7; }
+        color: #c1bfbb; }
   .menu-footer-navigation-container .current_page_item {
-    color: #cbc9c7; }
+    color: #c1bfbb; }
 
 /**
 * Hero
@@ -814,7 +814,7 @@ sub {
 * Home Zuma Halo title
 */
 .m-hero__title--zuma-halo {
-  color: #827c77;
+  color: #77746c;
   font-size: 1.4rem; }
   @media (min-width: 376px) {
     .m-hero__title--zuma-halo {
@@ -851,7 +851,7 @@ sub {
     fill: #000; }
 
 .m-large-copy--color-base {
-  color: #827c77; }
+  color: #77746c; }
 
 .m-large-copy--color-white {
   color: #fff; }
@@ -955,7 +955,7 @@ sub {
 .m-copy-image {
   display: flex;
   flex-flow: row wrap;
-  color: #827c77;
+  color: #77746c;
   padding: 2rem 0 10rem; }
   .m-copy-image p {
     font-size: 2.4rem;
@@ -1037,6 +1037,9 @@ sub {
   .m-copy-image--headline p br {
     display: none;
     visibility: hidden; }
+  .m-copy-image--headline p sup {
+    font-size: .3em;
+    top: -1.8em; }
 
 @media (min-width: 769px) {
   .m-copy-image--headline p br {
@@ -1059,7 +1062,7 @@ sub {
         font-size: 2.4rem; } }
 
 .m-page-footer {
-  background-color: #827c77;
+  background-color: #77746c;
   color: #fff;
   font-size: 1rem;
   text-transform: uppercase; }
@@ -1083,7 +1086,7 @@ sub {
     display: block;
     width: 80px;
     height: 20px;
-    fill: #fff; }
+    color: #fff; }
 
 /**
 * Social icons
@@ -1115,10 +1118,7 @@ sub {
   list-style: none;
   position: relative;
   display: flex;
-  flex-flow: row wrap;
-  /**
-   * Current active manu item
-   */ }
+  flex-flow: row wrap; }
   .m-sub-navigation__menu li {
     display: inline-block;
     text-align: center;
@@ -1174,10 +1174,7 @@ sub {
   list-style: none;
   position: relative;
   display: flex;
-  flex-flow: row wrap;
-  /**
-   * Current active manu item
-   */ }
+  flex-flow: row wrap; }
   .m-sub-navigation__menu li {
     display: inline-block;
     text-align: center;
@@ -1225,54 +1222,201 @@ sub {
     position: relative;
     margin: 0 auto; }
 
-.m-detail-group {
+.m-column-group {
   display: flex;
-  flex-flow: row wrap; }
-  .m-detail-group__item {
+  flex-flow: row wrap;
+  margin-bottom: 10rem; }
+  .m-column-group__item {
     flex-grow: 0;
     flex-shrink: 0;
-    flex-basis: calc(99.9% * 1/3 - (0px - 0px * 1/3));
-    max-width: calc(99.9% * 1/3 - (0px - 0px * 1/3));
-    width: calc(99.9% * 1/3 - (0px - 0px * 1/3));
-    outline: crimson solid 1px;
+    flex-basis: calc(99.9% * 1/3 - (36px - 36px * 1/3));
+    max-width: calc(99.9% * 1/3 - (36px - 36px * 1/3));
+    width: calc(99.9% * 1/3 - (36px - 36px * 1/3));
     position: relative; }
-  .m-detail-group__item:nth-child(1n) {
-    margin-right: 0px;
+  .m-column-group__item:nth-child(1n) {
+    margin-right: 36px;
     margin-left: 0; }
-  .m-detail-group__item:last-child {
+  .m-column-group__item:last-child {
     margin-right: 0; }
-  .m-detail-group__title {
+  .m-column-group__item:nth-child(3n) {
+    margin-right: 0;
+    margin-left: auto; }
+  .m-column-group__title {
     font-family: "semplicita-medium", Helvetica, Arial, sans-serif;
-    color: #827c77;
+    color: #77746c;
     text-transform: uppercase;
     font-size: 2.4rem; }
     @media (min-width: 376px) {
-      .m-detail-group__title {
+      .m-column-group__title {
         font-size: 3rem; } }
     @media (min-width: 769px) {
-      .m-detail-group__title {
+      .m-column-group__title {
         font-size: 3.6rem; } }
-  .m-detail-group__expand-icon {
-    background-color: rgba(0, 0, 0, 0.5);
+  .m-column-group__expand {
+    display: block;
+    margin-bottom: 5rem;
+    position: relative;
+    overflow: hidden; }
+    .m-column-group__expand--has-modal:hover .m-column-group__expand-icon {
+      background-color: rgba(0, 0, 0, 0.6); }
+      .m-column-group__expand--has-modal:hover .m-column-group__expand-icon svg {
+        -webkit-transform: scale(1.08);
+                transform: scale(1.08); }
+  .m-column-group__expand-icon {
+    background-color: rgba(0, 0, 0, 0.3);
     width: 30px;
     height: 30px;
     position: absolute;
-    top: 0;
-    right: 0;
+    top: 1rem;
+    right: 1rem;
     z-index: 1;
+    border-radius: 50%;
     display: block;
-    color: #fff; }
-  .m-detail-group__image {
-    margin-bottom: 5rem; }
-  .m-detail-group__copy p {
+    color: #fff;
+    display: flex;
+    -webkit-transition: all ease-in-out 200ms;
+    transition: all ease-in-out 200ms; }
+  .m-column-group__expand-icon {
+    justify-content: center;
+    align-items: center; }
+    .m-column-group__expand-icon svg {
+      width: 30px;
+      height: 30px;
+      -webkit-transition: all ease 100ms;
+      transition: all ease 100ms; }
+    .m-column-group__expand-icon:hover {
+      background-color: rgba(0, 0, 0, 0.6); }
+      .m-column-group__expand-icon:hover svg {
+        -webkit-transform: scale(1.08);
+                transform: scale(1.08); }
+  .m-column-group__image {
+    display: block; }
+  .m-column-group__copy p {
     font-size: 1.2rem;
     line-height: 1.65; }
     @media (min-width: 376px) {
-      .m-detail-group__copy p {
+      .m-column-group__copy p {
         font-size: 1.2rem; } }
     @media (min-width: 769px) {
-      .m-detail-group__copy p {
+      .m-column-group__copy p {
         font-size: 1.8rem; } }
+
+/**
+ * Modal
+ */
+.m-modal {
+  height: calc(100vh);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding: 0;
+  overflow: hidden; }
+
+/**
+ * Modal info sheet
+ */
+.m-modal__content {
+  background-color: #fff;
+  max-width: 384px;
+  position: absolute;
+  bottom: 0;
+  right: 10rem;
+  text-align: left;
+  overflow: hidden;
+  -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+  -webkit-transition: all ease-in-out 300ms;
+  transition: all ease-in-out 300ms; }
+  .m-modal__content p {
+    font-size: 1.2rem;
+    line-height: 1.65;
+    margin-bottom: 4rem; }
+    @media (min-width: 376px) {
+      .m-modal__content p {
+        font-size: 1.2rem; } }
+    @media (min-width: 769px) {
+      .m-modal__content p {
+        font-size: 1.8rem; } }
+
+/**
+ * Modal content inner
+ */
+.m-modal__content__inner {
+  padding: 4rem;
+  position: relative;
+  bottom: 0; }
+
+/**
+ * Modal info sheet download link and icon
+ */
+.m-modal__content__infosheet {
+  font-size: 1.1rem;
+  line-height: 1.65;
+  color: #a68c5e;
+  text-transform: uppercase;
+  font-family: "semplicita-semibold", Helvetica, Arial, sans-serif;
+  margin-bottom: 4rem;
+  display: inline-block; }
+  @media (min-width: 376px) {
+    .m-modal__content__infosheet {
+      font-size: 1.2rem; } }
+  @media (min-width: 769px) {
+    .m-modal__content__infosheet {
+      font-size: 1.3rem; } }
+  .m-modal__content__infosheet a {
+    color: currentColor;
+    vertical-align: bottom; }
+  .m-modal__content__infosheet__icon {
+    font-size: 3.5em;
+    vertical-align: bottom;
+    margin-bottom: 6px;
+    margin-right: 10px; }
+  .m-modal__content__infosheet:hover {
+    color: #55482f;
+    cursor: pointer; }
+
+/**
+ * Modal content list
+ */
+.m-modal__content__list {
+  font-family: "semplicita-semibold", Helvetica, Arial, sans-serif; }
+  .m-modal__content__list__item {
+    margin-bottom: 4rem; }
+    .m-modal__content__list__item:last-child {
+      margin-bottom: 0; }
+
+/**
+   * Modal caption label
+   */
+.m-modal__content__caption-toggle__label {
+  position: absolute;
+  right: 10rem;
+  bottom: 0;
+  z-index: 1;
+  line-height: 6.5;
+  height: 80px;
+  background-color: #fff;
+  width: 384px;
+  margin-bottom: 0;
+  text-align: left;
+  padding-left: 4rem;
+  vertical-align: middle; }
+  .m-modal__content__caption-toggle__label::before {
+    content: attr(data-closed);
+    display: inline; }
+
+/**
+ * Modal caption button
+ */
+.m-modal__content__caption-toggle__checkbox {
+  display: none;
+  visibility: hidden; }
+  .m-modal__content__caption-toggle__checkbox:checked ~ label::before {
+    content: attr(data-open);
+    display: inline; }
+  .m-modal__content__caption-toggle__checkbox:checked ~ .m-modal__content {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0); }
 
 /**
 * Components
@@ -1317,7 +1461,7 @@ sub {
     -webkit-transform: translateX(-100%) translateY(-50%) scale(0.97);
             transform: translateX(-100%) translateY(-50%) scale(0.97);
     z-index: 1;
-    background-color: #cbc9c7; }
+    background-color: #c1bfbb; }
 
 /**
 * Utilities

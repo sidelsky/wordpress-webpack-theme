@@ -8,5 +8,5 @@ export function svgSprite() {
       name: "assets/svg-sprite.svg"
    };
 
-   return __svg__;
+   return __svg__; 
 } 

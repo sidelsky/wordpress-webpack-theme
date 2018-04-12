@@ -13,7 +13,13 @@
 							'class' => 'm-page-footer__logo'
 						];
 						echo '<div class="m-page-footer__logo-container">';
-							echo render_zuma_logo( $logo_module_args );
+							$svg_icon_args = [
+								'class' => 'm-page-footer__logo',
+								'icon' => 'zuma'
+							];
+							echo '<a href="'. home_url() .'">';
+								echo Svg_icon::render($svg_icon_args);
+							echo '</a>';
 						echo '</div>';
 
 						echo '<div class="m-page-footer__social-icons">';
@@ -40,12 +46,12 @@
 					/**
 					 * Footer navigation
 					 */
-					$args = array(
+					$args = [
 						'theme_location'  => 'tertiary-navigation',
 						'container'     	=>	'nav',
 						'echo'          	=>	true,
 						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
-					);
+					];
 					wp_nav_menu($args);
 
 				echo '</div>';

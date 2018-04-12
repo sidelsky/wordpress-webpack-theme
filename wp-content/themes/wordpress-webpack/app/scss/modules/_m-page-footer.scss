@@ -1,62 +1,60 @@
 .m-page-footer {
+    background-color: palette(primary, base);
+    color: palette(bw, white);
+    @include set-font-size(1.0rem, 1.0rem, 1.0rem);
+    text-transform: uppercase;
 
-   background-color: palette(primary, base);
-   color: palette(bw, white);
-   @include set-font-size(1.0rem, 1.0rem, 1.0rem);
-   text-transform: uppercase;
+    &__container {
+        display: table;
+        width: 100%;
+        padding-top: $spacing--jumbo;
+        padding-bottom: $spacing--large-xxx;
 
-   &__container {
-      display: table;
-      width: 100%;
-      padding-top: $spacing--jumbo;
-      padding-bottom: $spacing--large-xxx;
-   }
+    } // Logo container
 
-     // Logo container
-     &__logo-container {
-      width: 80px;
-      display: table-cell;
-      vertical-align: middle;
-
-   }
-   
-   &__logo {
-      display: block;
-      display: block;
-      width: 80px;
-      height: 20px;
-      fill: $white;
-   }
-
-
+    &__logo-container {
+        width: 80px;
+        display: table-cell;
+        vertical-align: middle;
+      }
+      
+      &__logo {
+        display: block;
+        display: block;
+        width: 80px;
+        height: 20px;
+        color: $white;
+    }
 }
 
 /**
 * Social icons
 */
+
 .m-page-footer__social-icons {
-   display: table-cell;
-   vertical-align: middle;
-   text-align: right;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: right;
 
-   a {
-      color: $white;
-      display: block;
-   }
+    a {
+        color: $white;
+        display: block;
+    }
 
-   svg {
-      $dimensions: 20px;
-      width: $dimensions;
-      height: $dimensions;
-   }
+    svg {
+        $dimensions: 20px;
+        width: $dimensions;
+        height: $dimensions;
+    }
+    
 }
 
 .m-page-footer__copyright-container {
-   display: table;
-   padding-bottom: $spacing--large-x
+    display: table;
+    padding-bottom: $spacing--large-x
 }
 
 .m-page-footer__copyright {
-   display: table-cell;
-   vertical-align: middle;
+    display: table-cell;
+    vertical-align: middle;
 }

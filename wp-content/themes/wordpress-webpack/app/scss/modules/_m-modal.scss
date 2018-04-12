@@ -1,0 +1,146 @@
+/**
+ * Modal
+ */
+ $content-width: 384px;
+ $content-space: 80px;
+
+.m-modal {
+   height: calc(100vh);
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+   padding: 0;
+   overflow: hidden;
+}
+
+/**
+ * Modal info sheet
+ */
+.m-modal__content {
+   background-color: palette(bw, white);
+   max-width: $content-width;
+   position: absolute;
+   bottom: 0;
+   right: $spacing--jumbo;
+   text-align: left;
+   overflow: hidden;
+   transform: translate3d(0, 100%, 0);
+   transition: all ease-in-out 300ms;
+
+   p {
+      @include set-font-size(1.2rem, 1.2rem, 1.8rem);
+      line-height: 1.65;
+      margin-bottom: $spacing--large;
+   }
+
+}
+
+/**
+ * Modal content inner
+ */
+.m-modal__content__inner {
+   padding: $spacing--large;
+   position: relative;
+   bottom: 0;
+}
+
+
+/**
+ * Modal info sheet download link and icon
+ */
+.m-modal__content__infosheet {
+   @include set-font-size(1.1rem, 1.2rem, 1.3rem);
+   line-height: 1.65;
+   color: palette(tertiary, base);
+   text-transform: uppercase;
+   font-family: $font-primary-semibold;
+   margin-bottom: $spacing--large;
+   display: inline-block;
+
+   a {
+      color: currentColor;
+      vertical-align: bottom;
+   }
+
+   &__icon {
+
+      font-size: 3.5em;
+      vertical-align: bottom;
+      margin-bottom: 6px;
+      margin-right: 10px;
+
+   }
+
+   &:hover {
+      color: palette(tertiary, dark);
+      cursor: pointer;
+   }
+
+}
+
+/**
+ * Modal content list
+ */
+ .m-modal__content__list {
+   font-family: $font-primary-semibold;
+
+      &__item {
+         margin-bottom: $spacing--large;
+
+         &:last-child {
+            margin-bottom: 0;
+         }
+      }
+
+ }
+
+
+   /**
+   * Modal caption label
+   */
+   .m-modal__content__caption-toggle__label {
+      position: absolute;
+      right: $spacing--jumbo;
+      bottom: 0;
+      z-index: 1;
+      line-height: 6.5;
+      height: $content-space;
+      background-color: $white;
+      width: $content-width;
+      margin-bottom: 0;
+      text-align: left;
+      padding-left: $spacing--large;
+      vertical-align: middle;
+
+      &::before {
+         content: attr(data-closed);
+         display: inline;
+      }
+   }
+
+ /**
+ * Modal caption button
+ */
+ .m-modal__content__caption-toggle__checkbox {
+      display: none;
+      visibility: hidden;
+
+      &:checked {
+         
+         &~ label {
+            &::before {
+               content: attr(data-open);
+               display: inline;
+            }
+         }
+
+         &~ .m-modal__content {
+            transform: translate3d(0, 0, 0);
+         }
+
+      }
+
+   }
+
+
+

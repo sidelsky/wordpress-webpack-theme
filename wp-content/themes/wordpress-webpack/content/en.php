@@ -5,6 +5,11 @@
       'copyright'    => [
          'details'   => 'Copyright &copy; ' . date('Y') . ' ALL RIGHTS RESERVED. '
       ],
+      //Modal caption title
+      'moedal-caption'    => [
+         'closed' => 'Read caption',
+         'open'   => 'Close caption'
+      ],
       //Social info
       'social' => [
          'instagram' => [

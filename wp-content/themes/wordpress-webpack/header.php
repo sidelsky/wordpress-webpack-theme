@@ -22,7 +22,7 @@
 			 * Import SVG Sprite
 			 */
 			include('assets/svg-sprite.svg');
-
+			
 			/**
 			 * Content EN
 			 */
@@ -60,22 +60,25 @@
 						/**
 						* Render site logo
 						*/
-						$logo_module_args = [
-							'class' => 'm-page-header__logo'
+						$svg_icon_args = [
+							'class' => 'm-page-header__logo',
+							'icon' => 'zuma'
 						];
-						echo render_zuma_logo( $logo_module_args );
+						echo '<a href="'. home_url() .'">';
+							echo Svg_icon::render($svg_icon_args);
+						echo '</a>';
 
 					echo '</div>';
 					
 					/**
 					 * Primary navigation
 					 */
-					$args = array(
+					$args = [
 						'theme_location'  => 'primary-navigation',
 						'container'     	=>	'nav',
 						'echo'          	=>	true,
 						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
-					);
+					];
 					wp_nav_menu($args);
 
 				echo '</header>';
@@ -84,12 +87,12 @@
 			/**
 			 * Render Hero
 			 */
-			$hero_module_args = array(
+			$hero_module_args = [
 				'post_thumbnail_url' => get_the_post_thumbnail_url(), 
 				'hero_title_1st_line' => get_field( 'hero_title_1st_line' ),
 				'hero_title_2nd_line' => get_field( 'hero_title_2nd_line' ),
 				'image_only' => FALSE
-			 );
+			];
 			echo render_hero( $hero_module_args );
 
 		?>

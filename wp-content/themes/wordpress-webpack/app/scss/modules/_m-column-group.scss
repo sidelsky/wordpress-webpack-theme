@@ -1,0 +1,98 @@
+.m-column-group {
+   lost-flex-container: row;
+   margin-bottom: $spacing--jumbo;
+
+   // Item / Column
+   &__item {
+      lost-column: 1/3 3 36px;
+      position: relative;
+
+   }
+
+   // Title
+   &__title {
+      font-family: $font-primary-medium;
+      color: palette(primary, base);
+      text-transform: uppercase;
+      @include set-font-size(2.4rem, 3rem, 3.6rem);
+   }
+
+   // Expand
+   &__expand {
+      display: block;
+      margin-bottom: $spacing--large-x;
+      position: relative;
+      overflow: hidden;
+
+      // Has Modal
+      &--has-modal {
+
+         // Hover
+         &:hover {
+            
+            .m-column-group__expand-icon {
+               background-color: rgba($black, .6);
+
+               svg {
+                  transform: scale(1.08);
+               }
+
+            }
+      
+         }
+
+      }
+
+   }
+
+   // Expand icon
+   &__expand-icon {
+      background-color: rgba($black, .3);
+      $dimensions: 30px;
+      width: $dimensions;
+      height: $dimensions;
+      position: absolute;
+      top: $spacing--tiny;
+      right: $spacing--tiny;
+      z-index: 1;
+      border-radius: 50%;
+      display: block;
+      color: $white;
+      lost-align: center;
+      transition: all ease-in-out 200ms;
+
+      svg {
+         $dimensions: 30px;
+         width: $dimensions;
+         height: $dimensions;
+         transition: all ease 100ms;
+      }
+
+      // Hover
+      &:hover {
+         background-color: rgba($black, .6);
+
+         svg {
+            transform: scale(1.08);
+         }
+      }
+
+   }
+
+   // Image
+   &__image {
+      display: block;
+   }
+
+
+   // Copy
+   &__copy {
+      
+      p {
+         @include set-font-size(1.2rem, 1.2rem, 1.8rem);
+         line-height: 1.65;
+      }
+
+   }
+
+}

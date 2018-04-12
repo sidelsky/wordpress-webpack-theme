@@ -3,9 +3,6 @@
     * Layout builder
     */
 
-   $theme_url = get_bloginfo('template_directory');
-   $theme_image_folder = $theme_url . '/assets/img/';
-
    /**
     *  Check if the flexible content field has rows of data
     */ 
@@ -65,7 +62,7 @@
          if( have_rows('detail_group_item') ) :
             echo '<section class="u-section">';
                echo '<div class="u-row u-row--small">';
-                  echo '<div class="m-detail-group">';
+                  echo '<div class="m-column-group">';
                      while ( have_rows('detail_group_item') ) : the_row();
 
                         // Detail group item vars
@@ -74,22 +71,51 @@
                         $excerpt = get_sub_field('excerpt');
                         $modal_image = get_sub_field('modal_image')['url'];
                         $modal_detail = get_sub_field('modal_detail');
-                        $modal_info_sheet = get_sub_field('modal_info_sheet');
+                        $modal_info_sheet = get_sub_field('modal_info_sheet')['url'];
+                        $info_list = get_sub_field('info_list');
 
                         // Strip out all whitespace
-                        $name_clean = preg_replace('/\s*/', '', $title);
-                        // Convert the string to all lowercase
-                        $name_clean = strtolower($name_clean);
+                        $modal_name_clean = preg_replace('/\s*/', '', $title);
 
-                        if( $thumbnail ) {
-                           echo '<div class="m-detail-group__item">';
-                              echo '<a href="#'. $name_clean .'" class="m-detail-group__expand-icon"><svg class="b_icon"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-exspand" viewBox="0 0 32 32"></use></svg></a>';
-                              echo '<img src="'. $thumbnail .'" class="m-detail-group__image">';
-                              echo '<h3 class="m-detail-group__title">'. $title .'</h3>';
-                              echo '<div class="m-detail-group__copy">'. $excerpt .'</div>';
-                           echo '</div>';
-                        }
-                        
+                        // Convert the string to all lowercase
+                        $modal_name = strtolower($modal_name_clean);
+
+                        // Detail list group
+                        echo '<div class="m-column-group__item">';
+                           $svg_icon_args = array(
+                              'icon' => 'expand'
+                           );
+                           // If there is a Modal image
+                           if( $modal_image ) {
+                              echo '<a href="#'. $modal_name .'" class="m-column-group__expand m-column-group__expand--has-modal">';
+                                 echo '<span class="m-column-group__expand-icon">';
+                                    echo Svg_icon::render($svg_icon_args);
+                                 echo '</span>';
+                                 echo '<img src="'. $thumbnail .'" class="m-column-group__image">';
+                              echo '</a>';
+                              // If there is NO Modal image
+                           } else {
+                              echo '<div class="m-column-group__expand">';
+                                 echo '<img src="'. $thumbnail .'" class="m-column-group__image">';
+                              echo '</div>';
+                           }
+                           
+                           echo '<h3 class="m-column-group__title">'. $title .'</h3>';
+                           echo '<div class="m-column-group__copy">'. $excerpt .'</div>';
+                        echo '</div>';
+
+                        /**
+                         * Modal view
+                        */
+                        $modal_args = [
+                           'modal-name' => $modal_name,
+                           'modal-image' => $modal_image,
+                           'modal_info_sheet' => $modal_info_sheet,
+                           'modal_detail' => $modal_detail,
+                           'info_list' => $info_list
+                        ];
+                        echo Modal::render($modal_args);
+
                      endwhile;
                   echo '</div>';
                echo '</div>';
@@ -101,50 +127,3 @@
       endwhile;
    
    endif;
-
-/**
- * Modal view
- */
-echo '<div class="remodal" data-remodal-id="'. $name_clean .'">';
-   echo $name_clean;
-echo '</div>';
-
-echo '<div class="remodal" data-remodal-id="'. $name_clean .'">';
-   echo $name_clean;
-echo '</div>';
-
-echo '<div class="remodal" data-remodal-id="'. $name_clean .'">';
-   echo $name_clean;
-echo '</div>';
-
-// if($modal_image) :
-//    echo '<div style="background-image:url('. $modal_image .');" class="m-modal">';
-//       echo '<div class="m-modal__content">';
-         
-//       // Modal detail
-//          echo '<div class="m-modal__content__inner">';
-//             echo $modal_detail;
-
-//             // Info sheet
-//             echo '<div class="m-modal__content__infosheet">';
-//                echo '<img src="'. $theme_image_folder . 'pdf-icon.png' .'" alt="Download the info sheet">';
-//                echo '<a href="'. $modal_info_sheet .'" target="_blank">Download the info sheet</a>';
-//             echo '</div>';
-
-//             // Info list
-//             if( have_rows('info_list') ) :
-//                echo '<ul>';
-//                   while ( have_rows('info_list') ) : the_row();
-//                      $list_item = get_sub_field('list_item');
-//                      echo '<li>';
-//                         echo $list_item;
-//                      echo '</li>';
-//                   endwhile;
-//                echo '</ul>';
-//             endif;
-
-//          echo '</div>';
-
-//       echo '</div>';
-//    echo '</div>';
-// endif;

@@ -28,6 +28,7 @@ html.remodal-is-locked {
   left: -5000px;
 
   display: none;
+  background-color: rgba(white, .7);
 }
 
 /* Necessary styles of the wrapper */
@@ -46,6 +47,7 @@ html.remodal-is-locked {
   text-align: center;
 
   -webkit-overflow-scrolling: touch;
+  
 }
 
 .remodal-wrapper:after {
