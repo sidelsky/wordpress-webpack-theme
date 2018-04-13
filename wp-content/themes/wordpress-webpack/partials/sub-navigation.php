@@ -10,8 +10,9 @@
       'items_wrap'		=>	'<ul class="m-sub-navigation__menu" id="magic-nav">%3$s</ul>'
    );
    
-   echo '<section class="u-section">';
-      echo '<div class="u-row u-row--small">';
-         wp_nav_menu($args);
-      echo '</div>';
-   echo '</section>';
+
+      echo '<section class="u-section js-subheader m-sub-navigation__container">';
+         echo '<div class="u-row u-row--small">';
+            wp_nav_menu($args);
+         echo '</div>';
+      echo '</section>';

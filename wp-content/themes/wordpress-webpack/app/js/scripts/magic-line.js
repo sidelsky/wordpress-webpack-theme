@@ -1,6 +1,3 @@
-
-
-
 var $magicNav = $("#magic-nav");
 
 export function init_magic_line() {

@@ -15,12 +15,11 @@
 * Hero title container
 */
 .m-hero__title-container {
-   z-index: 1;
-   text-transform: uppercase;
+	text-transform: uppercase;
    text-align: center;
    
    @include media('>tablet') { 
-      @include aspect-ratio(3.5,2);
+		@include aspect-ratio(3.5,2);
       position: absolute;
       width: 60%;
    }
@@ -32,7 +31,6 @@
 */
 .m-hero__title {
 	display: block;
-	z-index: 1;
 	position: absolute;
 	left: 0;
 	right: 0;

@@ -1,10 +1,19 @@
+/**
+ * Using lost grid
+ * @documentation http://lostgrid.org/docs.html
+ */
+
 @lost gutter 0px;
 @lost flexbox flex;
 @lost cycle none;
 
 .u-section {
     width: 100%; //lost-column: 12/12;
-    //outline: solid red 1px;
+
+    &--white-bg {
+        background-color: $white;
+    }
+
 }
 
 .u-row {
@@ -27,8 +36,8 @@
         max-width: 1020px;
         //outline: solid Green 1px;
         @include media('<desktop-large') {
-				padding-left: $spacing--medium;
-				padding-right: $spacing--medium;
+            padding-left: $spacing--medium;
+            padding-right: $spacing--medium;
         }
     }
 }

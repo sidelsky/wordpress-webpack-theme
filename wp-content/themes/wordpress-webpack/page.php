@@ -6,7 +6,13 @@
 	include("header.php");
 	
 	// Sub navigation
-	include("partials/sub-navigation.php");
+	$args = [
+		'World-class team',
+		'Specification'
+	];
+	if( !is_page( $args ) ) {
+		include("partials/sub-navigation.php");
+	}
 
 	// Layout builder
 	include("partials/layout-builder.php");

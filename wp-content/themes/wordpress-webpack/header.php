@@ -52,7 +52,7 @@
 			/**
 			 * Page header
 			 */
-			echo '<section class="u-section m-page-header">';
+			echo '<section class="u-section m-page-header js-header">';
 				echo '<header class="m-page-header__inner-container u-row u-row--small">';
 
 					echo '<div class="m-page-header__logo-container">';
@@ -83,7 +83,7 @@
 
 				echo '</header>';
 			echo '</section>';
-
+			
 			/**
 			 * Render Hero
 			 */
@@ -94,5 +94,11 @@
 				'image_only' => FALSE
 			];
 			echo render_hero( $hero_module_args );
+
+			/**
+			 * Team members header
+			 * Check if the flexible content field has rows of data
+			*/
+			include('partials/world-class-team-header.php');
 
 		?>

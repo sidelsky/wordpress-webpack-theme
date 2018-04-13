@@ -68,6 +68,7 @@
                         // Detail group item vars
                         $thumbnail = get_sub_field('thumbnail')['url'];
                         $title = get_sub_field('title');
+                        $subtitle = get_sub_field('subtitle');
                         $excerpt = get_sub_field('excerpt');
                         $modal_image = get_sub_field('modal_image')['url'];
                         $modal_detail = get_sub_field('modal_detail');
@@ -75,19 +76,19 @@
                         $info_list = get_sub_field('info_list');
 
                         // Strip out all whitespace
-                        $modal_name_clean = preg_replace('/\s*/', '', $title);
+                        $name_clean = preg_replace('/\s*/', '', $title);
 
                         // Convert the string to all lowercase
-                        $modal_name = strtolower($modal_name_clean);
+                        $title_name = strtolower($name_clean);
 
                         // Detail list group
-                        echo '<div class="m-column-group__item">';
-                           $svg_icon_args = array(
+                        echo '<div class="m-column-group__item" id="'. $title_name .'">';
+                           $svg_icon_args = [
                               'icon' => 'expand'
-                           );
+                           ];
                            // If there is a Modal image
                            if( $modal_image ) {
-                              echo '<a href="#'. $modal_name .'" class="m-column-group__expand m-column-group__expand--has-modal">';
+                              echo '<a href="#'. $title_name .'" class="m-column-group__expand m-column-group__expand--has-modal">';
                                  echo '<span class="m-column-group__expand-icon">';
                                     echo Svg_icon::render($svg_icon_args);
                                  echo '</span>';
@@ -99,22 +100,31 @@
                                  echo '<img src="'. $thumbnail .'" class="m-column-group__image">';
                               echo '</div>';
                            }
-                           
-                           echo '<h3 class="m-column-group__title">'. $title .'</h3>';
+
+                           $args = [
+                              'World-class team'
+                           ];
+                           // Check for a Subtitle
+                           $subtitle_name = $subtitle ? '<br><span class="m-column-group__subtitle">'. $subtitle .'</span>' : '';
+                           $is_team_page = ( is_page( $args ) ) ? 'm-column-group__title--small' : '';
+                           echo '<h3 class="m-column-group__title' . ' ' . $is_team_page . '">'. $title . $subtitle_name . '</h3>';
                            echo '<div class="m-column-group__copy">'. $excerpt .'</div>';
+
                         echo '</div>';
 
                         /**
                          * Modal view
                         */
-                        $modal_args = [
-                           'modal-name' => $modal_name,
-                           'modal-image' => $modal_image,
-                           'modal_info_sheet' => $modal_info_sheet,
-                           'modal_detail' => $modal_detail,
-                           'info_list' => $info_list
-                        ];
-                        echo Modal::render($modal_args);
+                        if( !is_page( $args ) ) {
+                           $modal_args = [
+                              'modal-name' => $title_name,
+                              'modal-image' => $modal_image,
+                              'modal_info_sheet' => $modal_info_sheet,
+                              'modal_detail' => $modal_detail,
+                              'info_list' => $info_list
+                           ];
+                           echo Modal::render($modal_args);
+                        }
 
                      endwhile;
                   echo '</div>';

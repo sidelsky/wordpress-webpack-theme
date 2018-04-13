@@ -1,11 +1,19 @@
-.m-column-group {
+/**
+ * Column group
+ */
+ 
+ .m-column-group {
    lost-flex-container: row;
    margin-bottom: $spacing--jumbo;
 
    // Item / Column
    &__item {
-      lost-column: 1/3 3 36px;
+      lost-column: 1/1 1 36px;
       position: relative;
+
+      @include media('>tablet') {
+         lost-column: 1/3 3 36px;
+      }
 
    }
 
@@ -15,16 +23,29 @@
       color: palette(primary, base);
       text-transform: uppercase;
       @include set-font-size(2.4rem, 3rem, 3.6rem);
+
+      // Small title
+      &--small {
+         @include set-font-size(1.8rem, 1.8rem, 2.4rem);
+      }
+
+   }
+
+   // Subtitle
+   &__subtitle {
+      font-family: $font-primary-regular;
+      color: palette(bw, black);
+      @include set-font-size(1.2rem, 1.2rem, 1.8rem);
    }
 
    // Expand
    &__expand {
       display: block;
-      margin-bottom: $spacing--large-x;
+      margin-bottom: $spacing--large;
       position: relative;
       overflow: hidden;
 
-      // Has Modal
+      // If has Modal
       &--has-modal {
 
          // Hover
@@ -89,8 +110,40 @@
    &__copy {
       
       p {
-         @include set-font-size(1.2rem, 1.2rem, 1.8rem);
+         @include set-font-size(1.4rem, 1.4rem, 1.8rem);
          line-height: 1.65;
+      }
+
+   }
+
+}
+
+
+/**
+* Header versions
+*/
+.m-column-group__item--header {
+
+   lost-column: 1/3 3 2.5%;
+
+   .m-column-group__expand {
+      margin-bottom: 8% 
+   }
+
+}
+
+
+
+/**
+ * Target the slected Team mamber
+ */
+.m-column-group__item:target {
+
+   .m-column-group__expand {
+      background: lighten( palette(primary, light), 18% );
+
+      img {
+         padding: $spacing--tiny;
       }
 
    }
