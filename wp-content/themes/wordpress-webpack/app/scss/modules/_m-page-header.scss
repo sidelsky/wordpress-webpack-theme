@@ -30,17 +30,29 @@ $height: 150px;
 }
 
 
-.page-wrap {
+// .page-wrap {
 
-      padding-top: $height;
+//       padding-top: $height;
 
-}
+// }
 
 
 
-.is-sticky {
-   position: fixed;
-   top: 0;
-   width: 100%;
-   z-index: 2;
+ .is-sticky {
+
+   // Main navigation
+   .m-page-header__inner-container {
+      height: 100px;
+
+   }
+
+   // Sub navigation
+   .m-sub-navigation__container {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+      
+   }
+
  }

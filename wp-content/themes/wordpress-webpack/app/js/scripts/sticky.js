@@ -9,34 +9,37 @@ export function init_sticky() {
 
    }
 
-
-
+   var subNavigation = document.querySelector('.js-subheader');
    var navigation = document.querySelector('.js-header');
    var pageWrap = document.querySelector('.page-wrap');
    var navigationHeight = navigation.offsetHeight;
-   var subNavigation = document.querySelector('.js-subheader');
+   pageWrap.style.paddingTop = navigationHeight + 'px';
+
+   if( subNavigation ) {
+
    var subNavigationHeight = subNavigation.offsetHeight;
    var sticky = subNavigation.offsetTop;
+   
+      function myFunction() {
 
-   function myFunction() {
+         if(window.pageYOffset + navigationHeight >= sticky ) {
+            pageWrap.classList.add('is-sticky');
+            subNavigation.style.top = navigationHeight + 'px';
+            pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
+         } else {
+            pageWrap.classList.remove('is-sticky');
+            subNavigation.style.top = null;
+            pageWrap.style.paddingTop = navigationHeight + 'px';
+         }
 
-      if(window.pageYOffset + navigationHeight >= sticky ) {
-         subNavigation.classList.add('is-sticky');
-         subNavigation.style.top = navigationHeight + 'px';
-         pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
-      } else {
-         subNavigation.classList.remove('is-sticky');
-         subNavigation.style.top = null;
-         pageWrap.style.paddingTop = null
       }
+
+      window.onscroll = function() {
+         myFunction();
+      }
+
    }
 
-
-
-
-   window.onscroll = function() {
-      myFunction();
-   }
 
 
 init_sticky()

@@ -854,10 +854,10 @@ sub {
     height: 20px;
     fill: #000; }
 
-.page-wrap {
-  padding-top: 150px; }
+.is-sticky .m-page-header__inner-container {
+  height: 100px; }
 
-.is-sticky {
+.is-sticky .m-sub-navigation__container {
   position: fixed;
   top: 0;
   width: 100%;
