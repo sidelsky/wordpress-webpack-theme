@@ -2,16 +2,21 @@
    lost-flex-container: row;
 
    &__logo {
-      lost-column: 1/5;
+      lost-column: 1/2;
       lost-align: center;
       padding: $spacing--small;
+      
+      @include media('>desktop') {
+         lost-column: 1/5;
 
-      &:first-child {
-         padding-left: 0;
-      }
+         &:first-child {
+            padding-left: 0;
+         }
+         
+         &:last-child {
+            padding-right: 0;
+         }
 
-      &:last-child {
-         padding-right: 0;
       }
 
    }

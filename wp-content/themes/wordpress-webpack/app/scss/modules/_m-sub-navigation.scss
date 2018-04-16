@@ -3,7 +3,13 @@
 
    &__container {
       background-color: $background-color;
-      padding: $spacing--large 0 0;
+      padding: $spacing--small 0 0;
+
+      // Tablet upwards
+      @include media('>tablet') {
+         padding: $spacing--large 0 0;
+      }
+
    }
 }
 
@@ -30,7 +36,15 @@
          text-transform: uppercase;
          display: block;
          width: 100%;
-         padding-bottom: $spacing--large-xx;
+         padding-bottom: $spacing--small;
+         font-size: 1.2rem;
+         
+         // Tablet upwards
+         @include media('>tablet') {
+            padding-bottom: $spacing--large-xx;
+            font-size: 1.4rem;
+         }
+
       }
 
       span {

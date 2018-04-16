@@ -10,6 +10,7 @@
    &__item {
       lost-column: 1/1 1 36px;
       position: relative;
+      margin-bottom: $spacing--large;
 
       @include media('>tablet') {
          lost-column: 1/3 3 36px;
@@ -125,6 +126,7 @@
 .m-column-group__item--header {
 
    lost-column: 1/3 3 2.5%;
+   margin-bottom: 0;
 
    .m-column-group__expand {
       margin-bottom: 8% 

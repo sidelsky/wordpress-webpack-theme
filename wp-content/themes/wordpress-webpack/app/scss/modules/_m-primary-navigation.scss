@@ -1,6 +1,7 @@
 .menu-primary-navigation-container {
    display: table-cell;
    vertical-align: middle;
+   padding: $spacing--tiny 0;
 
    .site-nav__menu {
       margin: 0;
@@ -13,10 +14,18 @@
       font-family: font-family(primary, semibold);
       color: palette(primary, dark);
       text-transform: uppercase;
-      @include set-font-size(1.25rem, 1.25rem, 1.25rem);
-      display: inline-block;
+      @include set-font-size(.8rem, 1rem, 1.25rem);
       padding-left: $spacing--large-xx;
       letter-spacing: 0.15rem;
+      line-height: 2;
+
+      @include media('>tablet') {
+         line-height: 2.1;
+      }
+      
+      @include media('>desktop') {
+         display: inline-block;
+      }
 
       a {
          color: currentColor;

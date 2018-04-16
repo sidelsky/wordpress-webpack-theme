@@ -5,12 +5,13 @@ $height: 150px;
    position: fixed;
    top: 0;
    width: 100%;
-   z-index: 2;
+   z-index: 10;
 
    &__inner-container {
       display: table;
       width: 100%;
       height: $height;
+      transition: height ease-in-out 250ms;
    }
    
    // Logo container
@@ -29,21 +30,14 @@ $height: 150px;
 
 }
 
-
-// .page-wrap {
-
-//       padding-top: $height;
-
-// }
-
-
-
+  /**
+   * Is stickey header and navigation
+   */
  .is-sticky {
 
    // Main navigation
    .m-page-header__inner-container {
-      height: 100px;
-
+      height: 80px;
    }
 
    // Sub navigation
@@ -51,7 +45,7 @@ $height: 150px;
       position: fixed;
       top: 0;
       width: 100%;
-      z-index: 2;
+      z-index: 200;
       
    }
 

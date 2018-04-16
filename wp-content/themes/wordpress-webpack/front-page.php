@@ -46,7 +46,7 @@
 					];
 					echo Large_copy::render($large_copy_module_args);
 
-					echo '<div class="c-play-button js-play-button"><span class="c-play-button__title">Play</span></div>';
+					echo '<div class="c-play-button js-play-button"><div class="c-play-button__inner"><span class="c-play-button__title">Play</span></div></div>';
 				echo '</div>';
 
 				echo $poster_image;

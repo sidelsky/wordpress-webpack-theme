@@ -1,28 +1,47 @@
 .c-play-button {
-   lost-align: center;
-   $dimensions: 190px;
-   width: $dimensions;
-   height: $dimensions;
-   border-radius: 50%;
-   background-color: palette(bw, white);
-   color: palette(bw, black);
-   text-transform: uppercase;
-   @include set-font-size(1.0rem, 2.0rem, 3.0rem);
-   font-family: $font-primary-semibold;
-   letter-spacing: .3rem;
-   @include vertical-align(absolute, 50%, 100%, 1);
-   transition: all ease-in-out .2s;
+   @include vertical-align(absolute, 100%, 50%, 1);
 
-   &__title {
-      color: currentColor;
-      display: block;
-      padding-top: $spacing--tiny;
+   @include media('>tablet') {
+      @include vertical-align(absolute, 50%, 97%, 1);
    }
 
-   // Hover
-   &:hover {
+   &__inner {
+      lost-align: center;
+      $dimensions: 65px;
+      width: $dimensions;
+      height: $dimensions;
+      border-radius: 50%;
+      background-color: palette(bw, white);
+      color: palette(bw, black);
+      text-transform: uppercase;
+      font-size: 1rem;
+      font-family: $font-primary-semibold;
+      letter-spacing: .3rem;
+      transition: all ease-in-out .2s;
+      border: solid 0px $white;
       cursor: pointer;
-      @include vertical-align(absolute, 50%, 100%, .97);
-      background-color: palette(primary, light);
+
+      @include media('>tablet') {
+         font-size: 2rem;
+         $dimensions: 160px;
+         width: $dimensions;
+         height: $dimensions;
+      }
+
+      @include media('>desktop') {
+         font-size: 3rem;
+         $dimensions: 190px;
+         width: $dimensions;
+         height: $dimensions;
+      }
+
+      //Hover
+      &:hover {
+         background-color: transparent;
+         border: solid 2px $white;
+         color: $white;
+      }
+
    }
+
 }

@@ -17,17 +17,18 @@
 }
 
 
-@mixin set-font-size($small-font: '1.5rem', $medium-font: '1.8rem', $large-font: '2.5rem') {
+@mixin set-font-size($small-font: '1.8rem', $medium-font: '2.4rem', $large-font: '3.6rem') {
 
 	font-size: #{$small-font};
 
-	@include media('>phone') {
+	@include media('>tablet') {
 		font-size: #{$medium-font};
 	}
 
-	@include media('>tablet') {
+	@include media('>desktop') {
 		font-size: #{$large-font};
 	}
+
 }
 
 /* aspect ratio | padding-bottom value

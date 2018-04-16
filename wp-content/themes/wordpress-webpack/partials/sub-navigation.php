@@ -11,7 +11,7 @@
    );
    
 
-      echo '<section class="u-section js-subheader m-sub-navigation__container">';
+      echo '<section class="u-section js-subnavigation m-sub-navigation__container">';
          echo '<div class="u-row u-row--small">';
             wp_nav_menu($args);
          echo '</div>';

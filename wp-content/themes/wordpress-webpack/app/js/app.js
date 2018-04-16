@@ -11,7 +11,7 @@ import init_video from "./scripts/video";
 import init_magic_line from "./scripts/magic-line";
 import init_remodal from "./scripts/remodal";
 import "./scripts/scrollto";
-import init_sticky from "./scripts/sticky";
+import "./scripts/sticky";
 
 /**
  * Vendor scripts
