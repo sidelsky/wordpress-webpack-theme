@@ -82,7 +82,7 @@
                         $title_name = strtolower($name_clean);
 
                         // Detail list group
-                        echo '<div class="m-column-group__item" id="'. $title_name .'">';
+                        echo '<div class="m-column-group__item" id="'. $title_name .'" data-in-viewport>';
                            $svg_icon_args = [
                               'icon' => 'expand'
                            ];

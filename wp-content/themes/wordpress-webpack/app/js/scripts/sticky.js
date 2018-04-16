@@ -10,7 +10,7 @@
 		pageWrap,
 		navigationHeight,
 		subNavigationHeight,
-		stickyTop
+		stickyTop;
 
 		subNavigation = document.querySelector('.js-subnavigation');
 		navigation = document.querySelector('.js-header');
@@ -22,7 +22,6 @@
 		stickyTop = subNavigation.offsetTop;
 	}
 	
-	
 	pageWrap.style.paddingTop = navigationHeight + 'px';
 	
 	function skicky_navigation() {
@@ -33,8 +32,6 @@
 				pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
 				navigationHeight = navigation.offsetHeight;
 				subNavigation.style.top = navigationHeight + 'px';
-				// setTimeout(function(){
-				// },100);
 			} else {
 				pageWrap.classList.remove('is-sticky');
 				subNavigation.style.top = null;
@@ -53,7 +50,7 @@
 
 	window.onscroll = function () {
 		skicky_navigation();
-	}
+	};
 
 }());
 

@@ -1666,6 +1666,14 @@ strong {
 html.hidden {
   display: block !important; }
 
+[data-in-viewport] {
+  opacity: 1; }
+  @media (min-width: 769px) {
+    [data-in-viewport] {
+      opacity: 0;
+      -webkit-transition: all ease-in 350ms;
+      transition: all ease-in 350ms; } }
+
 /**
  * Responsive hide-below
  *

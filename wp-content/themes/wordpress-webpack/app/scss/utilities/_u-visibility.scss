@@ -5,23 +5,26 @@
 /**
 * Uppercase type
 */
+
 .u-text-transform--uppercase {
     text-transform: uppercase;
-  }
-  
-  /**
+}
+
+/**
   * Font weight semibold
   */
-  .font-family--semibold,
-  strong {
+
+.font-family--semibold,
+strong {
     font-family: font-family(primary, semibold);
-  }
+}
 
 /* Screen reader
  -----------------------------------*/
+
 .u-sr-only {
     border: 0;
-    clip: rect(0,0,0,0);
+    clip: rect(0, 0, 0, 0);
     height: 1px;
     margin: -1px;
     overflow: hidden;
@@ -30,33 +33,49 @@
     width: 1px;
 }
 
-
-
 /* Centering
  -----------------------------------*/
+
 .u-center-block {
     margin-left: auto;
     margin-right: auto;
 }
 
-
-
 /* Basic show/hide classes
  -----------------------------------*/
+
 .u-hidden {
-    display: none!important;
+    display: none !important;
 }
 
 .u-show {
-    display: block!important;
+    display: block !important;
 }
 
 // Modernizer will add a hidden class to the HTML tag so this is here to counter that rule on the HTML tag
 html.hidden {
-    display: block!important;
+    display: block !important;
+}
+
+[data-in-viewport] {
+	opacity: 1;
+
+	@include media('>tablet') {
+		opacity: 0;
+		//transform: translate3d(0, 100px, 0);
+		transition: all ease-in 350ms;
+	}
+}
+
+.animate {
+	//transform: translate3d(0, 0, 0);
 }
 
 
+// .animate {
+// 	transform: translate3d(0, 0, 0);
+// 	opacity: 1;
+// }
 
 /**
  * Responsive hide-below
@@ -70,7 +89,7 @@ html.hidden {
  $max-width-x-large: max-width 1280px;
  $max-width-xx-large: max-width 1600px;---------------*/
 
- /*
+/*
 .u-hide-below--small {
 
     @include breakpoint($max-width-small) {
@@ -122,7 +141,7 @@ html.hidden {
  $xx-large: 1600px;
  -----------------------------------*/
 
- /*
+/*
 .u-hide-above--small {
 
     @include breakpoint($small) {

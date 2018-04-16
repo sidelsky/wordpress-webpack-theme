@@ -32,7 +32,7 @@
                         $title_name = strtolower($name_clean);
 
                         // Detail list group
-                        echo '<div class="m-column-group__item m-column-group__item--header">';
+                        echo '<div class="m-column-group__item m-column-group__item--header" data-in-viewport>';
                            echo '<a href="#'. $title_name .'" class="m-column-group__expand">';
                               echo '<img src="'. $thumbnail .'" class="m-column-group__image">';
                            echo '</a>';

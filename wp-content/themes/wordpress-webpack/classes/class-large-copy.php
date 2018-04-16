@@ -39,7 +39,7 @@
             $html .= '</div>';
          } else {
             $html .= '<section class="u-section">';
-               $html .= '<div class="u-row u-row--small">';
+               $html .= '<div class="u-row u-row--small" data-in-viewport>';
                   $html .= '<div class="m-large-copy m-large-copy--'. $fontSize .' m-large-copy--'. $fontColor .' u-text-transform--uppercase">';
                      $html .= $copy;
                   $html .= '</div>';

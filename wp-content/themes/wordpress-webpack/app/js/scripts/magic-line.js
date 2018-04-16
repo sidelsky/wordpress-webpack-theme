@@ -33,27 +33,9 @@ function magic_line() {
       .data("origLeft", $magicLine.position().left)
       .data("origWidth", $magicLine.width());
 
-
-   // $magicNav.find("li a").on('click', function(e){
-   //    $el = $(this);
-   //    padding = ($el.outerWidth() - $el.width()) / 2;
-   //    leftPos = $el.position().left + padding;
-   //    newWidth = $el.width();
-      
-      
-   //    $magicLine.animate({
-   //       left: leftPos,
-   //       width: newWidth
-   //    });
-
-   //    //e.preventDefault();
-   // });
-   
-
    $magicNav.find("li a").hover(function(e) {
       $el = $(this);
       padding = ($el.outerWidth() - $el.width()) / 2;
-      //console.log($el.outerWidth(), $el.width(), padding);
       leftPos = $el.position().left + padding;
       newWidth = $el.width();
 
@@ -68,19 +50,6 @@ function magic_line() {
          width: $magicLine.data("origWidth")
       });
    });
-
-
-   // $magicNav.find("li a").click(function(e) {
-
-      
-
-      
-   //    e.preventDefault();
-   //    //$magicLine.data("origLeft", $(this).position().left);
-   //    console.log('clicked');
-
-   // });
-
 
 }
 

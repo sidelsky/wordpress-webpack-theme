@@ -82,7 +82,7 @@
 	*/
 	$brand_logos = get_field( 'brand_logos' );
 	if( $brand_logos ) {
-		echo '<section class="u-section">';
+		echo '<section class="u-section" >';
 			echo '<div class="u-row u-row--small">';
 				echo '<ul class="m-brand-logos">';
 					foreach( $brand_logos as $brand_logo ) {

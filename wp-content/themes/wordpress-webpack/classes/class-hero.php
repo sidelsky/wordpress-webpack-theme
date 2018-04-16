@@ -30,7 +30,7 @@
          }
 
          $html .= '<section class="u-section">';
-            $html .= '<div class="m-hero u-row--full-width" '. $background .' >';
+            $html .= '<div class="m-hero u-row u-row--full-width" '. $background .' >';
 
             /**
              * Check to see if it's image only and no copy

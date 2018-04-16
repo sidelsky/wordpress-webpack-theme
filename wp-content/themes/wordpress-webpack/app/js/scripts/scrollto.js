@@ -7,8 +7,6 @@
 	navigation = document.querySelector('.js-header'),
 	navigationHeight = navigation.offsetHeight - 20;
 
-	console.log(navigationHeight);
-
    elem.on('click', scrolltoani );
 
    function scrolltoani() {
