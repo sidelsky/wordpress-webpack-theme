@@ -7,3 +7,4 @@ wp-content/themes/wordpress-webpack/vendor/*
 wp-content/themes/wordpress-webpack/node_modules
 wp-content/themes/wordpress-webpack/yarn-error.log
 wp-content/themes/wordpress-webpack/package-lock.json
+wp-content/updraft

@@ -1,4 +1,4 @@
-$height: 150px;
+//$height: 150px;
 
 .m-page-header {
    background-color: palette(bw, white);
@@ -10,7 +10,7 @@ $height: 150px;
    &__inner-container {
       display: table;
       width: 100%;
-      height: $height;
+      //height: $height;
       transition: height ease-in-out 250ms;
    }
    
@@ -36,17 +36,25 @@ $height: 150px;
  .is-sticky {
 
    // Main navigation
-   .m-page-header__inner-container {
-      height: 80px;
+  //  .m-page-header__inner-container {
+  //     height: 80px;
+  //     transform: translate3d(0,0,0);
+  //     transition: height ease 1s;
+  //  }
+
+   .menu-primary-navigation-container {
+    padding: $spacing--small 0;
+    transition: padding ease 1s;
    }
 
    // Sub navigation
    .m-sub-navigation__container {
+      transform: translate3d(0,0,0);
+      //transition: all ease 1s;
       position: fixed;
       top: 0;
       width: 100%;
       z-index: 200;
-      
    }
 
  }

@@ -23,15 +23,22 @@
 	}
 	
 	pageWrap.style.paddingTop = navigationHeight + 'px';
+
+	function setHeight() {
+		navigationHeight = navigation.offsetHeight;
+		pageWrap.classList.add('is-sticky');
+	}
 	
 	function skicky_navigation() {
 
 		if (subNavigation) {
-			if (window.pageYOffset + navigationHeight > stickyTop) {
-				pageWrap.classList.add('is-sticky');
-				pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
-				navigationHeight = navigation.offsetHeight;
+			if (window.pageYOffset + navigationHeight > stickyTop + 10) {
+				
+				setHeight();
+				
 				subNavigation.style.top = navigationHeight + 'px';
+				pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
+				
 			} else {
 				pageWrap.classList.remove('is-sticky');
 				subNavigation.style.top = null;

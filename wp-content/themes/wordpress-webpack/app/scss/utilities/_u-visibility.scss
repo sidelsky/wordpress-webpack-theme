@@ -58,19 +58,14 @@ html.hidden {
 }
 
 [data-in-viewport] {
-	opacity: 1;
+    opacity: 0;
+    transition: all ease-in 350ms;
 
 	@include media('>tablet') {
 		opacity: 0;
-		//transform: translate3d(0, 100px, 0);
 		transition: all ease-in 350ms;
 	}
 }
-
-.animate {
-	//transform: translate3d(0, 0, 0);
-}
-
 
 // .animate {
 // 	transform: translate3d(0, 0, 0);
