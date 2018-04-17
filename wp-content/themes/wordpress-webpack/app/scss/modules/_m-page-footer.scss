@@ -1,7 +1,10 @@
+/**
+* Page footer
+*/
 .m-page-footer {
     background-color: palette(primary, base);
     color: palette(bw, white);
-    @include set-font-size(1.0rem, 1.0rem, 1.0rem);
+    @include set-font-size(1.0rem, 1.0rem, 1.0rem, 1.0rem);
     text-transform: uppercase;
 
     &__container {
@@ -10,8 +13,8 @@
         padding-top: $spacing--jumbo;
         padding-bottom: $spacing--large-xxx;
 
-    } // Logo container
-
+    } 
+    // Logo container
     &__logo-container {
         width: 80px;
         display: table-cell;
@@ -30,7 +33,6 @@
 /**
 * Social icons
 */
-
 .m-page-footer__social-icons {
     display: table-cell;
     vertical-align: middle;
@@ -50,11 +52,22 @@
 }
 
 .m-page-footer__copyright-container {
-    display: table;
-    padding-bottom: $spacing--large-x
+    padding-bottom: $spacing--large-x;
+
+    @include media('>phone') {
+        display: table;
+    }
+
 }
 
 .m-page-footer__copyright {
     display: table-cell;
     vertical-align: middle;
+    padding-bottom: $spacing--tiny;
+
+    @include media('>phone') {
+        display: table;
+        padding-bottom: 0;
+    }
+
 }

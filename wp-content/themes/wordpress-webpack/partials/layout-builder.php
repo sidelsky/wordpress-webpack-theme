@@ -61,7 +61,7 @@
 
          if( have_rows('detail_group_item') ) :
             echo '<section class="u-section">';
-               echo '<div class="u-row u-row--small">';
+               echo '<div class="u-row u-row--small" data-in-viewport>';
                   echo '<div class="m-column-group">';
                      while ( have_rows('detail_group_item') ) : the_row();
 

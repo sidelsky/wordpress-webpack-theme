@@ -29,8 +29,8 @@
             $background = ' style="background-image:url('. $args['post_thumbnail_url'] .')" ';
          }
 
-         $html .= '<section class="u-section">';
-            $html .= '<div class="m-hero u-row u-row--full-width" '. $background .' >';
+         $html .= '<section class="u-section" >';
+            $html .= '<div class="m-hero u-row u-row--full-width" '. $background .' data-in-viewport>';
 
             /**
              * Check to see if it's image only and no copy

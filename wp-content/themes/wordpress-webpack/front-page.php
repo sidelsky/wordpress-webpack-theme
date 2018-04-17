@@ -25,6 +25,7 @@
 		'copy' => $content,
 		'font-size' => 'font-large',
 		'font-color' => 'color-base',
+		'uppercase' => TRUE,
 		'content-only' => FALSE
 	];
 	echo Large_copy::render($large_copy_module_args);
@@ -33,7 +34,7 @@
 	 * Video module
 	*/
 	echo '<section class="u-section">';
-		echo '<div class="u-row u-row--full-width">';
+		echo '<div class="u-row u-row--full-width" data-in-viewport>';
 			echo '<div class="u-iframe m-video-player js-video-player">';
 
 				echo '<div class="m-video-player__content u-row--small">';
@@ -42,6 +43,7 @@
 						'copy' => $headline,
 						'font-size' => 'font-small',
 						'font-color' => 'color-white',
+						'uppercase' => TRUE,
 						'content-only' => TRUE
 					];
 					echo Large_copy::render($large_copy_module_args);
@@ -62,6 +64,7 @@
 		'copy' => $content_two,
 		'font-size' => 'font-large',
 		'font-color' => 'color-base',
+		'uppercase' => FALSE,
 		'content-only' => FALSE
 	];
 	echo Large_copy::render($large_copy_module_args);
@@ -83,7 +86,7 @@
 	$brand_logos = get_field( 'brand_logos' );
 	if( $brand_logos ) {
 		echo '<section class="u-section" >';
-			echo '<div class="u-row u-row--small">';
+			echo '<div class="u-row u-row--small" data-in-viewport>';
 				echo '<ul class="m-brand-logos">';
 					foreach( $brand_logos as $brand_logo ) {
 						$image = $brand_logo['sizes']['large'];

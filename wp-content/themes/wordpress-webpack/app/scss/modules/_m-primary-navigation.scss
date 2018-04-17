@@ -1,7 +1,17 @@
 .menu-primary-navigation-container {
    display: table-cell;
    vertical-align: middle;
-   padding: $spacing--large-xx 0;
+   perspective: 1000px;
+   transition: all ease 100ms;
+   padding: $spacing--tiny 0;
+
+   @include media('>tablet') {
+      padding: $spacing--large-xx 0;
+   }
+   
+   @include media('>desktop') {
+      padding: $spacing--large-xx 0;
+   }
 
    .site-nav__menu {
       margin: 0;
@@ -14,7 +24,7 @@
       font-family: font-family(primary, semibold);
       color: palette(primary, dark);
       text-transform: uppercase;
-      @include set-font-size(.8rem, 1rem, 1.25rem);
+      @include set-font-size(.8rem, 1rem, 1.2rem, 1.2rem);
       padding-left: $spacing--large-xx;
       letter-spacing: 0.15rem;
       line-height: 2;

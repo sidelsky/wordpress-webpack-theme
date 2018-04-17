@@ -41,3 +41,49 @@
         }
     }
 }
+
+%u-tb-padding {
+
+    padding: $spacing--large-x 0;
+
+    @include media('>tablet') {
+        padding: $spacing--large-xxx 0;
+    }
+
+    @include media('>desktop') {
+        padding: $large--padding 0;
+    }
+
+
+    &--medium {
+
+        padding: $spacing--small 0;
+
+        @include media('>tablet') {
+            padding: $spacing--medium 0;
+        }
+    
+        @include media('>desktop') {
+            padding: $spacing--large 0;
+        }
+
+    } 
+
+
+    &--small {
+
+        padding: $spacing--tiny 0;
+
+        @include media('>tablet') {
+            padding: $spacing--small 0;
+        }
+    
+        @include media('>desktop') {
+            padding: $spacing--medium 0;
+        }
+
+    } 
+
+
+
+}

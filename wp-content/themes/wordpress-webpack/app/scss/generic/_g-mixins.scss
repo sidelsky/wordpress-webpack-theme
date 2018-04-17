@@ -17,16 +17,20 @@
 }
 
 
-@mixin set-font-size($small-font: '1.8rem', $medium-font: '2.4rem', $large-font: '3.6rem') {
+@mixin set-font-size($small-font: '1.8rem', $medium-font: '1.8rem', $large-font: '2.4rem', $x-large-font: '3.6rem') {
 
 	font-size: #{$small-font};
 
-	@include media('>tablet') {
+	@include media('>phone') {
 		font-size: #{$medium-font};
 	}
 
-	@include media('>desktop') {
+	@include media('>tablet') {
 		font-size: #{$large-font};
+	}
+
+	@include media('>desktop') {
+		font-size: #{$x-large-font};
 	}
 
 }

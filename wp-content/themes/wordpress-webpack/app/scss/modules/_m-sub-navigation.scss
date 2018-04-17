@@ -4,6 +4,8 @@
    &__container {
       background-color: $background-color;
       padding: $spacing--small 0 0;
+      perspective: 1000px;
+      transition: all ease 100ms;
 
       // Tablet upwards
       @include media('>tablet') {

@@ -2,16 +2,26 @@
  * Modal
  */
  $content-width: 384px;
- $content-space: 80px;
+ $content-space: 70px;
 
 .m-modal {
-   height: calc(100vh);
+   height: calc(100vh - 70px);
    background-repeat: no-repeat;
    background-position: center center;
    background-size: cover;
    padding: 0;
    overflow: hidden;
+
+   @include media('>phone') {
+    height: calc(100vh - 30px)
+   }
+
+   @include media('>desktop') {
+    height: calc(100vh)
+   }
+   
 }
+
 
 /**
  * Modal info sheet
@@ -21,14 +31,22 @@
    max-width: $content-width;
    position: absolute;
    bottom: 0;
-   right: $spacing--jumbo;
+   right: 0;
    text-align: left;
    overflow: hidden;
    transform: translate3d(0, 100%, 0);
    transition: all ease-in-out 300ms;
 
+   @include media('>phone') {
+    right: $spacing--small;
+   }
+
+   @include media('>desktop') {
+    right: $spacing--jumbo;
+   }
+
    p {
-      @include set-font-size(1.2rem, 1.2rem, 1.8rem);
+      @include set-font-size(1.2rem, 1.2rem, 1.4rem, 1.8rem);
       line-height: 1.65;
       margin-bottom: $spacing--large;
    }
@@ -44,12 +62,11 @@
    bottom: 0;
 }
 
-
 /**
  * Modal info sheet download link and icon
  */
 .m-modal__content__infosheet {
-   @include set-font-size(1.1rem, 1.2rem, 1.3rem);
+   @include set-font-size(1.1rem, 1.1rem, 1.2rem, 1.3rem);
    line-height: 1.65;
    color: palette(tertiary, base);
    text-transform: uppercase;
@@ -100,10 +117,10 @@
    */
    .m-modal__content__caption-toggle__label {
       position: absolute;
-      right: $spacing--jumbo;
+      right: 0;
       bottom: 0;
       z-index: 1;
-      line-height: 6.5;
+      line-height: 7.5;
       height: $content-space;
       background-color: $white;
       width: $content-width;
@@ -111,6 +128,14 @@
       text-align: left;
       padding-left: $spacing--large;
       vertical-align: middle;
+
+      @include media('>phone') {
+        right: $spacing--small;
+       }
+    
+       @include media('>desktop') {
+        right: $spacing--jumbo;
+       }
 
       &::before {
          content: attr(data-closed);

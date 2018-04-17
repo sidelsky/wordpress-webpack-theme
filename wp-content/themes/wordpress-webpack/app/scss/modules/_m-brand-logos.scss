@@ -4,9 +4,10 @@
    &__logo {
       lost-column: 1/2;
       lost-align: center;
-      padding: $spacing--small;
+      padding: $spacing--tiny;
       
-      @include media('>desktop') {
+      
+      @include media('>phone') {
          lost-column: 1/5;
 
          &:first-child {
@@ -17,6 +18,10 @@
             padding-right: 0;
          }
 
+      }
+
+      @include media('>tablet') {
+         padding: $spacing--medium;
       }
 
    }

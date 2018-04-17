@@ -53,7 +53,7 @@
 
                   $html .= $modal_detail;
 
-                  // Info sheet
+                  // Info sheet 
                   $html .= '<div class="m-modal__content__infosheet">';
                      $html .= '<img src="'. $theme_image_folder . 'pdf-icon.png' .'" alt="Download the info sheet" class="b_icon m-modal__content__infosheet__icon">';
                      $html .= '<a href="'. $modal_info_sheet .'" target="_blank">Download the info sheet</a>';

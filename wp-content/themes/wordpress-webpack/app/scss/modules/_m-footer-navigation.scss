@@ -1,7 +1,10 @@
 .menu-footer-navigation-container {
-   display: table-cell;
-   vertical-align: middle;
-   padding: 0 0 0 $spacing--tiny;
+
+   @include media('>phone') {
+      display: table-cell;
+      vertical-align: middle;
+      padding: 0 0 0 $spacing--tiny;
+  }
 
    .site-nav__menu {
       margin: 0;
@@ -13,7 +16,7 @@
    .menu-item {
       font-family: font-family(primary, semibold);
       display: inline-block;
-      @include set-font-size(1.0rem, 1.0rem, 1.0rem);
+      @include set-font-size(1.0rem, 1.0rem, 1.0rem, 1.0rem);
       padding: 0 $spacing--tiny 0 0;
 
       a {

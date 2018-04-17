@@ -39,7 +39,7 @@
             $color_dark = $large_title_copy ? 'm-copy-image--color-dark' : ''; 
          
             $html .= '<section class="u-section">';
-               $html .= '<div class="u-row u-row--small">';
+               $html .= '<div class="u-row u-row--small" data-in-viewport>';
                   $html .= '<div class="m-copy-image">';
                      $html .= '<div class="m-copy-image__column '. $is_headline .'">';
                         if( $copy ) {

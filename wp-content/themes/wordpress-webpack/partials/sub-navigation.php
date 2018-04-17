@@ -12,7 +12,7 @@
    
 
       echo '<section class="u-section js-subnavigation m-sub-navigation__container">';
-         echo '<div class="u-row u-row--small">';
+         echo '<div class="u-row u-row--small" data-in-viewport>';
             wp_nav_menu($args);
          echo '</div>';
       echo '</section>';

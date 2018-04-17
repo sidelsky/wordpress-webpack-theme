@@ -1,13 +1,9 @@
 .c-play-button {
-   @include vertical-align(absolute, 100%, 50%, 1);
-
-   @include media('>tablet') {
-      @include vertical-align(absolute, 50%, 97%, 1);
-   }
+   @include vertical-align(absolute, 50%, 95%, 1);
 
    &__inner {
       lost-align: center;
-      $dimensions: 65px;
+      $dimensions: 80px;
       width: $dimensions;
       height: $dimensions;
       border-radius: 50%;
@@ -21,7 +17,7 @@
       border: solid 0px $white;
       cursor: pointer;
 
-      @include media('>tablet') {
+      @include media('>phone') {
          font-size: 2rem;
          $dimensions: 160px;
          width: $dimensions;

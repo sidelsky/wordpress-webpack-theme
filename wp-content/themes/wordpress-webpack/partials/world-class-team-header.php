@@ -17,7 +17,7 @@
 
          if( have_rows('detail_group_item') ) :
             echo '<section class="u-section u-section--white-bg" id="world-class-team">';
-               echo '<div class="u-row u-row--full-width">';
+               echo '<div class="u-row u-row--full-width" data-in-viewport>';
                   echo '<div class="m-column-group">';
                      while ( have_rows('detail_group_item') ) : the_row();
 
