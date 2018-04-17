@@ -59,12 +59,12 @@ html.hidden {
 
 [data-in-viewport] {
     opacity: 0;
-    transition: all ease-in 350ms;
-
-	@include media('>tablet') {
-		opacity: 0;
-		transition: all ease-in 350ms;
-	}
+    transition: all ease-out 350ms;
+    //transform: translate3d(0,15px,0);
+    
+    .animate {
+        //transform: translate3d(0,0,0);
+    }
 }
 
 // .animate {

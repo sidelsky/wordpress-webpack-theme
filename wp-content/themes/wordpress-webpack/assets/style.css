@@ -1366,8 +1366,7 @@ sub {
  */
 .m-column-group {
   display: flex;
-  flex-flow: row wrap;
-  margin-bottom: 10rem; }
+  flex-flow: row wrap; }
   .m-column-group__item {
     flex-grow: 0;
     flex-shrink: 0;
@@ -1793,13 +1792,8 @@ html.hidden {
 
 [data-in-viewport] {
   opacity: 0;
-  -webkit-transition: all ease-in 350ms;
-  transition: all ease-in 350ms; }
-  @media (min-width: 769px) {
-    [data-in-viewport] {
-      opacity: 0;
-      -webkit-transition: all ease-in 350ms;
-      transition: all ease-in 350ms; } }
+  -webkit-transition: all ease-out 350ms;
+  transition: all ease-out 350ms; }
 
 /**
  * Responsive hide-below

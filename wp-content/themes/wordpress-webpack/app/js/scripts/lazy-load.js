@@ -44,10 +44,9 @@ import "waypoints/lib/jquery.waypoints";
 
            if (itemQueue.length) {
 
-             $(itemQueue.shift()).css({
+             $(itemQueue.shift()).animate({
                opacity: 1
-             }, time*2, function(){
-                console.log($(this));
+             }, time, function(){
                $(this).addClass('animate');
              });
              processItemQueue();

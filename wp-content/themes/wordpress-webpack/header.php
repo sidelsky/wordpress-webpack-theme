@@ -53,7 +53,7 @@
 			 * Page header
 			 */
 			echo '<section class="u-section m-page-header js-header">';
-				echo '<header class="m-page-header__inner-container u-row u-row--small" data-in-viewport>';
+				echo '<header class="m-page-header__inner-container u-row u-row--small" >';
 
 					echo '<div class="m-page-header__logo-container">';
 

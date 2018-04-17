@@ -12,7 +12,7 @@
 						$logo_module_args = [
 							'class' => 'm-page-footer__logo'
 						];
-						echo '<div class="m-page-footer__logo-container">';
+						echo '<div class="m-page-footer__logo-container" data-in-viewport>';
 							$svg_icon_args = [
 								'class' => 'm-page-footer__logo',
 								'icon' => 'zuma'
@@ -22,7 +22,7 @@
 							echo '</a>';
 						echo '</div>';
 
-						echo '<div class="m-page-footer__social-icons">';
+						echo '<div class="m-page-footer__social-icons" data-in-viewport>';
 							foreach( $theme_content['social'] as $content ) {
 								echo '<a href="' . $content['url'] . '" target="'. $content['target'] .'">';
 									$svg_icon_args = [
@@ -34,7 +34,7 @@
 						echo '</div>';
 					echo '</div>';
 
-					echo '<div class="m-page-footer__copyright-container">';
+					echo '<div class="m-page-footer__copyright-container" data-in-viewport>';
 						
 						/**
 						* Copyright details
