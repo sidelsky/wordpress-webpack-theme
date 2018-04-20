@@ -20,41 +20,67 @@
 							echo '<a href="'. home_url() .'">';
 								echo Svg_icon::render($svg_icon_args);
 							echo '</a>';
+
+							echo '<span class="m-page-footer__strapline">';
+								echo get_bloginfo('description');
+							echo '</span>';
+							
 						echo '</div>';
 
-						echo '<div class="m-page-footer__social-icons" data-in-viewport>';
-							foreach( $theme_content['social'] as $content ) {
-								echo '<a href="' . $content['url'] . '" target="'. $content['target'] .'">';
-									$svg_icon_args = [
-										'icon' => $content['icon']
-									];
-									echo Svg_icon::render( $svg_icon_args );
-								echo '</a>';
-							}
+						echo '<div class="m-page-footer__copyright-container" data-in-viewport>';
+							/**
+							 * Copyright details
+							 */
+							echo '<div class="m-page-footer__copyright">';
+								echo $theme_content['copyright']['details'];
+							echo '</div>';
+
+							/**
+							 * Footer navigation
+							 */
+							$args = [
+								'theme_location'  => 'tertiary-navigation',
+								'container'     	=>	'nav',
+								'echo'          	=>	true,
+								'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
+							];
+							wp_nav_menu($args);
+
 						echo '</div>';
+
+						// echo '<div class="m-page-footer__social-icons" data-in-viewport>';
+						// 	foreach( $theme_content['social'] as $content ) {
+						// 		echo '<a href="' . $content['url'] . '" target="'. $content['target'] .'">';
+						// 			$svg_icon_args = [
+						// 				'icon' => $content['icon']
+						// 			];
+						// 			echo Svg_icon::render( $svg_icon_args );
+						// 		echo '</a>';
+						// 	}
+						// echo '</div>';
 					echo '</div>';
 
-					echo '<div class="m-page-footer__copyright-container" data-in-viewport>';
+				// 	echo '<div class="m-page-footer__copyright-container">';
 						
-						/**
-						* Copyright details
-						*/
-						echo '<div class="m-page-footer__copyright">';
-							echo $theme_content['copyright']['details'];
-						echo '</div>';
+				// 		/**
+				// 		* Copyright details
+				// 		*/
+				// 		echo '<div class="m-page-footer__copyright">';
+				// 			echo $theme_content['copyright']['details'];
+				// 		echo '</div>';
 
-					/**
-					 * Footer navigation
-					 */
-					$args = [
-						'theme_location'  => 'tertiary-navigation',
-						'container'     	=>	'nav',
-						'echo'          	=>	true,
-						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
-					];
-					wp_nav_menu($args);
+				// 		/**
+				// 		 * Footer navigation
+				// 		 */
+				// 		$args = [
+				// 			'theme_location'  => 'tertiary-navigation',
+				// 			'container'     	=>	'nav',
+				// 			'echo'          	=>	true,
+				// 			'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
+				// 		];
+				// 		wp_nav_menu($args);
 
-				echo '</div>';
+				// echo '</div>';
 			echo '</footer>';
 
 		/**

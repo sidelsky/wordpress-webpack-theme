@@ -1,17 +1,10 @@
-.m-video-player {
-   lost-align: center;
-   
-   &__content {
+/**
+ * Video player
+ */
+ 
+.m-video-player__poster {
     opacity: 1;
-    z-index: 2;
-    position: absolute;
-	width: 100%;
-	transition: ease-out opacity 500ms;
-   }
-
-   &__poster {
-	opacity: 1;
-	transition: ease-out opacity 500ms;
+    transition: ease-out opacity 300ms;
     position: absolute;
     z-index: 1;
     top: 0;
@@ -21,15 +14,22 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-   }   
-
-
+    @include media('<desktop-large') {
+        padding-left: $spacing--medium;
+        padding-right: $spacing--medium;
+    }
+    .m-large-copy {
+        padding: 0;
+        max-width: 1024px;
+        @include vertical-align(relative, 50%, 50%, 1);
+    }
 }
 
-.isPlaying > .m-video-player__poster,
-.isPlaying > .m-video-player__content {
+/**
+ * Video is playing
+ */
 
+.isPlaying>.m-video-player__poster,
+.isPlaying>.m-video-player__content {
     opacity: 0;
-
 }
-

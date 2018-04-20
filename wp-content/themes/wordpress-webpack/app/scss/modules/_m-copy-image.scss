@@ -1,17 +1,21 @@
 .m-copy-image {
    lost-flex-container: row;
    color: palette(primary, base);
-   //padding:$spacing--small 0 $spacing--jumbo;
    @extend %u-tb-padding--medium;
+
+   &--dark-color {
+      color: palette(bw, black);
+   }
    
    p {
-      @include set-font-size(2.4rem, 2.4rem, 2.4rem, 2.4rem);
-      line-height: 1.6;
+      @include set-font-size(2.0rem, 2.0rem, 2.4rem, 2.0rem);
+      line-height: 1.75;
       padding-top: $spacing--x-large;
    }
 
    &__column {
       lost-column: 2/2;
+      position: relative;
 
       // Desktop up
       @include media('>desktop') {
@@ -34,12 +38,19 @@
       @include set-font-size(2rem, 2rem, 2rem, 2rem);
       color: palette(tertiary, base);
       text-transform: uppercase;
-      display: block;
       padding-top: $spacing--medium;
       font-family: $font-primary-semibold;
       transition: all ease-in-out 200ms;
       letter-spacing: 0.09em;
-
+      display: inline-block;
+      
+      @include media('>desktop') {
+         display: block;
+         position: absolute;
+         width: 100%;
+         bottom: $spacing--x-large;   
+      }
+   
       &::after {
          content: '';
          display: block;

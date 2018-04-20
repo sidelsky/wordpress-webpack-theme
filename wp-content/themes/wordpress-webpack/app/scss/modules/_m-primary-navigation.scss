@@ -1,3 +1,17 @@
+%active-menu {
+
+   &::before {
+      content: '';
+      display: block;
+      height: 3px;
+      background-color: currentColor;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+   }
+
+}
+
 .menu-primary-navigation-container {
    display: table-cell;
    vertical-align: middle;
@@ -10,7 +24,7 @@
    }
    
    @include media('>desktop') {
-      padding: $spacing--large-xx 0;
+      padding: 5.2rem 0;
    }
 
    .site-nav__menu {
@@ -22,7 +36,7 @@
    // List item
    .menu-item {
       font-family: font-family(primary, semibold);
-      color: palette(primary, dark);
+      color: palette(greys, base);
       text-transform: uppercase;
       @include set-font-size(.8rem, 1rem, 1.2rem, 1.2rem);
       padding-left: $spacing--large-xx;
@@ -40,9 +54,19 @@
       a {
          color: currentColor;
          cursor: pointer;
+         position: relative;
+         display: inline-block;
+         @include media('>tablet') {
+            padding-bottom: 15px;
+         }
+
+         &::before {
+            content: '';
+            transition: ease 200ms all;
+         }
 
          &:hover {
-            color: palette(primary, light);
+            @extend %active-menu;
          }
 
       }
@@ -52,7 +76,9 @@
    // Current active menu item
    .current_page_item,
    .current-page-ancestor {
-      color: palette(primary, light);
+      a {
+         @extend %active-menu;
+      }
    }
 
 }

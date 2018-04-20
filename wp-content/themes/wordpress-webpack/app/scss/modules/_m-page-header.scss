@@ -35,20 +35,13 @@
    */
  .is-sticky {
 
-   // Main navigation
-  //  .m-page-header__inner-container {
-  //     height: 80px;
-  //     transform: translate3d(0,0,0);
-  //     transition: height ease 1s;
-  //  }
-
    .menu-primary-navigation-container {
-     padding: $spacing--tiny 0;
-     transition: all ease 1s;
+    //  padding: $spacing--tiny 0;
+    //  transition: all ease 180ms;
 
-    @include media('>tablet') {
-      padding: $spacing--small 0;
-    }
+    // @include media('>tablet') {
+    //   padding: $spacing--small 0;
+    // }
 
    }
 

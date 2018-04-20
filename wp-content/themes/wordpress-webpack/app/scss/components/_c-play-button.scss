@@ -1,5 +1,10 @@
 .c-play-button {
-   @include vertical-align(absolute, 50%, 95%, 1);
+   @include vertical-align(absolute, 50%, 90%, 1);
+
+   @include media('>tablet') {
+      @include vertical-align(absolute, 50%, 85%, 1);
+  }
+
 
    &__inner {
       lost-align: center;

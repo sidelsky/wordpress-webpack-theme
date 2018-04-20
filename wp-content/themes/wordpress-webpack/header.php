@@ -30,7 +30,7 @@
 
 			/**
 			 * Require all Views (Functions)
-			*/
+			 */
 			function return_views() {
 
 				$folder = '/views/*.php';
@@ -48,52 +48,47 @@
 		 * Page wrap
 		 */
 		echo '<div class="page-wrap">';
-			
+
 			/**
 			 * Page header
 			 */
 			echo '<section class="u-section m-page-header js-header">';
 				echo '<header class="m-page-header__inner-container u-row u-row--small" >';
-
 					echo '<div class="m-page-header__logo-container">';
-
 						/**
 						* Render site logo
 						*/
-						$svg_icon_args = [
-							'class' => 'm-page-header__logo',
-							'icon' => 'zuma'
-						];
-						echo '<a href="'. home_url() .'">';
-							echo Svg_icon::render($svg_icon_args);
-						echo '</a>';
-
+						echo Render_class::class_render([
+							'template_name' => 'template-svg-icons',
+							'icon_name'		 => 'zuma',
+							'class_name'	 => 'm-page-header__logo',
+							'href'	 		 => home_url()
+						]);
 					echo '</div>';
 					
 					/**
 					 * Primary navigation
 					 */
-					$args = [
+					wp_nav_menu([
 						'theme_location'  => 'primary-navigation',
 						'container'     	=>	'nav',
 						'echo'          	=>	true,
 						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
-					];
-					wp_nav_menu($args);
+					]);
 
 				echo '</header>';
 			echo '</section>';
 			
 			/**
-			 * Render Hero
-			 */
-			$hero_module_args = [
-				'post_thumbnail_url' => get_the_post_thumbnail_url(), 
-				'hero_title_1st_line' => get_field( 'hero_title_1st_line' ),
-				'hero_title_2nd_line' => get_field( 'hero_title_2nd_line' ),
-				'image_only' => FALSE
-			];
-			echo render_hero( $hero_module_args );
+			* Render Hero
+			*/
+			echo Render_class::class_render([
+				'template_name' 			=> 'template-render-hero',
+				'post_thumbnail_url' 	=> get_the_post_thumbnail_url(),
+				'hero_title_1st_line'	=> get_field( 'hero_title_1st_line' ),
+				'hero_title_2nd_line'	=> get_field( 'hero_title_2nd_line' ),
+				'image_only'	 		 	=> FALSE
+			]);
 
 			/**
 			 * Team members header

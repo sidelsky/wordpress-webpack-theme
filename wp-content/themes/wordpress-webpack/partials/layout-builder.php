@@ -22,6 +22,7 @@
                'post_thumbnail_url' => $image, 
                'hero_title_1st_line' => NULL,
                'hero_title_2nd_line' => NULL,
+               'width' => 'small',
                'image_only' => TRUE
             ];
             echo render_hero($hero_module_args);
@@ -49,6 +50,7 @@
                'image' => $image,
                'link_title' => $link_title,
                'link_url' => $link_url,
+               'color_dark' => FALSE,
             ];
             echo Copy_image::render($copy_image_args);
 
@@ -62,7 +64,7 @@
          if( have_rows('detail_group_item') ) :
             echo '<section class="u-section">';
                echo '<div class="u-row u-row--small" data-in-viewport>';
-                  echo '<div class="m-column-group">';
+                  echo '<div class="m-column-group m-column-group--tb-padding">';
                      while ( have_rows('detail_group_item') ) : the_row();
 
                         // Detail group item vars

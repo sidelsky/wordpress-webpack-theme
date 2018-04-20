@@ -13,16 +13,17 @@
 
          $args = $large_copy_module_args;
             } else {
-                  $args = array();
+                  $args = [];
             }
 
-         $defaults = array(
+         $defaults = [
             'copy' => NULL,
             'font-size' => 'font-large',
             'font-color' => 'color-base',
+            'altsize' => FALSE,
             'content-only' => FALSE,
             'uppercase' => FALSE,
-         );
+         ];
 
          $args = wp_parse_args( $args, $defaults );
 
@@ -32,13 +33,15 @@
          $fontColor = $args['font-color'];
          $contentOnly = $args['content-only'];
          $uppercase = $args['uppercase'];
+         $altsize = $args['altsize'];
 
          $is_uppercase = $uppercase === ( TRUE ) ? 'u-text-transform--uppercase' : '';
+         $is_altsize = $altsize === ( TRUE ) ? 'altsize' : '';
 
          $html = '';
 
          if( $contentOnly == TRUE ) {
-            $html .= '<div class="m-large-copy m-large-copy--'. $fontSize .' m-large-copy--'. $fontColor .' '. $is_uppercase .'">';
+            $html .= '<div class="m-large-copy m-large-copy--'. $fontSize .'  m-large-copy--'. $fontColor .' '. $is_uppercase .'">';
                $html .= $copy;
             $html .= '</div>';
          } else {

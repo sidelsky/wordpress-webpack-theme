@@ -2,7 +2,6 @@
 	/**
 	 * SVG Icon
 	 */
-
 	class Svg_icon {
 
       public static function render($svg_icon_args) {

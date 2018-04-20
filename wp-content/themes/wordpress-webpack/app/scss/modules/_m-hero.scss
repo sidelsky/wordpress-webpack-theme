@@ -3,12 +3,13 @@
 */
 .m-hero {
 
-   @include aspect-ratio(4,3);
-   background-size: cover;
+   @include aspect-ratio(4,4);
+	//background-size: cover;
+	background-size: contain;
    background-position: center center;
    background-repeat: no-repeat;
    margin: 0 auto;
-   lost-align: center;
+   //lost-align: center;
 }
 
 /**
@@ -16,10 +17,13 @@
 */
 .m-hero__title-container {
 	text-transform: uppercase;
-   text-align: center;
+	text-align: center;
+	//lost-align: center;
+	@include aspect-ratio(3.5,2);
+	@include vertical-align();
+	width: 100%;
    
    @include media('>tablet') { 
-		@include aspect-ratio(3.5,2);
       position: absolute;
       width: 60%;
    }
@@ -49,14 +53,16 @@
 */
 .m-hero__title--home {
 	color: palette(secondary, base);
-	@include set-font-size(1.8rem, 1.8rem, 2.4rem, 3rem);
+	@include set-font-size(1.8rem, 2.4rem, 2.4rem, 3rem);
+
+	$position: 10%;
 
 	&--top {
-		top: 20%;
+		top: $position;
 	}
 
 	&--bottom {
-		bottom: 20%;
+		bottom: $position;
 	}
 
 	// Tablet upwards

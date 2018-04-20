@@ -20,6 +20,7 @@
                'image' => NULL,
                'link_title' => NULL,
                'link_url' => NULL,
+               'color_dark' => NULL,
                'large_title' => FALSE
             );
             
@@ -31,6 +32,7 @@
             $link_title = $args['link_title'];
             $link_url = $args['link_url'];
             $large_headline = $args['large_title'];
+            $color_dark = $args['color_dark'];
             
             // Check to see if it's a headline
             $is_headline = $large_headline ? 'm-copy-image--headline' : '';

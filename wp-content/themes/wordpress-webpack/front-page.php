@@ -5,6 +5,8 @@
 	*/
 	include("header.php");
 
+	$content;
+
 	/**
 	 * Page Vars
 	*/
@@ -15,7 +17,7 @@
 	$iframe = get_field( 'video' );
 	$large_image = get_field( 'large_image' )['url'];
 
-	$poster_image = $poster ? '<div class="m-video-player__poster" style="background-image:url('. $poster .');"></div>' : ''; 
+	//$poster_image = $poster ? '<div class="m-video-player__poster" style="background-image:url('. $poster .');"></div>' : ''; 
 
 
 	/**
@@ -33,12 +35,11 @@
 	/**
 	 * Video module
 	*/
-	echo '<section class="u-section">';
+	echo '<section class="u-section js-play-button">';
 		echo '<div class="u-row u-row--full-width" data-in-viewport>';
 			echo '<div class="u-iframe m-video-player js-video-player">';
-
-				echo '<div class="m-video-player__content u-row--small">';
-
+				// Poster
+				echo '<div class="m-video-player__poster" style="background-image:url('. $poster .');">';
 					$large_copy_module_args = [
 						'copy' => $headline,
 						'font-size' => 'font-small',
@@ -46,23 +47,21 @@
 						'uppercase' => TRUE,
 						'content-only' => TRUE
 					];
-					echo Large_copy::render($large_copy_module_args);
-
 					echo '<div class="c-play-button js-play-button"><div class="c-play-button__inner"><span class="c-play-button__title">Play</span></div></div>';
-				echo '</div>';
+					echo Large_copy::render($large_copy_module_args);
+				echo '</div>';	
 
-				echo $poster_image;
 				echo $iframe;
-			echo '</div>';
+			echo '</div>';	
 		echo '</div>';
-	echo '</section>';
+	echo '</section >';
 
 	/**
 	 * Large copy module
 	*/
 	$large_copy_module_args = [
 		'copy' => $content_two,
-		'font-size' => 'font-large',
+		'font-size' => 'font-medium',
 		'font-color' => 'color-base',
 		'uppercase' => FALSE,
 		'content-only' => FALSE
@@ -76,6 +75,7 @@
 		'post_thumbnail_url' => $large_image, 
 		'hero_title_1st_line' => NULL,
 		'hero_title_2nd_line' => NULL,
+		'width' => 'full-width',
 		'image_only' => TRUE
 	];
 	echo render_hero($hero_module_args);
@@ -86,12 +86,12 @@
 	$brand_logos = get_field( 'brand_logos' );
 	if( $brand_logos ) {
 		echo '<section class="u-section" >';
-			echo '<div class="u-row u-row--small" data-in-viewport>';
+			echo '<div class="u-row u-row--small">';
 				echo '<ul class="m-brand-logos">';
 					foreach( $brand_logos as $brand_logo ) {
 						$image = $brand_logo['sizes']['large'];
 						$alt = $brand_logo['title'];
-						echo '<li class="m-brand-logos__logo"><img src="'. $image .'" alt="'. $alt .'"></li>';
+						echo '<li class="m-brand-logos__logo" data-in-viewport><img src="'. $image .'" alt="'. $alt .'"></li>';
 					}
 				echo '</ul>';
 			echo '</div>';

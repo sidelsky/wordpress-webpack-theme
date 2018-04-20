@@ -17,12 +17,14 @@
             'post_thumbnail_url' => NULL, 
             'hero_title_1st_line' => NULL,
             'hero_title_2nd_line' => NULL,
+            'width' => NULL,
             'image_only' => FALSE
          ];
 
          $post_thumbnail_url = $args['post_thumbnail_url'];
          $hero_title_1st_line = $args['hero_title_1st_line'];
          $hero_title_2nd_line = $args['hero_title_2nd_line'];
+         $width = $args['width'];
          $imageOnly = $args['image_only'];
 
          if( $post_thumbnail_url ) {
@@ -30,7 +32,7 @@
          }
 
          $html .= '<section class="u-section" >';
-            $html .= '<div class="m-hero u-row u-row--full-width" '. $background .' data-in-viewport>';
+            $html .= '<div class="m-hero u-row u-row--'. $width .'" '. $background .' data-in-viewport>';
 
             /**
              * Check to see if it's image only and no copy
@@ -41,8 +43,8 @@
                    * If page is - Front page / Home
                    */
                   if( is_front_page() ) {
-                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--top">'. $args['hero_title_1st_line'] .'</span>';
-                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--bottom">'. $args['hero_title_2nd_line'] .'</span>';
+                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--top">'. $hero_title_1st_line .'</span>';
+                     $html .= '<span class="m-hero__title m-hero__title--home m-hero__title--home--bottom">'. $hero_title_2nd_line .'</span>';
                   }
                   /**
                    * If page is — Zuma Halo

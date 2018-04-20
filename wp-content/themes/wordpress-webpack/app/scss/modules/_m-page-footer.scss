@@ -8,15 +8,18 @@
     text-transform: uppercase;
 
     &__container {
-        display: table;
         width: 100%;
         padding-top: $spacing--jumbo;
         padding-bottom: $spacing--large-xxx;
+        
+        @include media('>tablet') {
+            display: table;
+        }
 
     } 
     // Logo container
     &__logo-container {
-        width: 80px;
+        //width: 80px;
         display: table-cell;
         vertical-align: middle;
       }
@@ -24,50 +27,82 @@
       &__logo {
         display: block;
         display: block;
-        width: 80px;
-        height: 20px;
+        width: 110px;
+        height: 30px;
         color: $white;
+    }
+    // strapline
+    &__strapline {
+        @include set-font-size(1.5rem, 1.5rem, 1.5rem, 1.5rem);
+        padding-top: $spacing--small;
+        display: block;
+        font-family: $font-primary-medium;
+        letter-spacing: 0.1rem;
+        margin-bottom: $spacing--large;
+
+        @include media('>tablet') {
+            margin-bottom: 0;
+        }
+        
     }
 }
 
 /**
 * Social icons
 */
-.m-page-footer__social-icons {
-    display: table-cell;
-    vertical-align: middle;
-    text-align: right;
+// .m-page-footer__social-icons {
+//     display: table-cell;
+//     vertical-align: middle;
+//     text-align: right;
 
-    a {
-        color: $white;
-        display: block;
-    }
+//     a {
+//         color: $white;
+//         display: block;
+//     }
 
-    svg {
-        $dimensions: 20px;
-        width: $dimensions;
-        height: $dimensions;
-    }
+//     svg {
+//         $dimensions: 20px;
+//         width: $dimensions;
+//         height: $dimensions;
+//     }
     
-}
+// }
 
 .m-page-footer__copyright-container {
-    padding-bottom: $spacing--large-x;
 
-    @include media('>phone') {
-        display: table;
+
+    @include media('>tablet') {
+
+        text-align: right;
+        display: table-cell;
+        vertical-align: bottom;
+        line-height: 1.5;
+
     }
 
 }
 
-.m-page-footer__copyright {
-    display: table-cell;
-    vertical-align: middle;
-    padding-bottom: $spacing--tiny;
+// .m-page-footer__copyright-container {
+//     text-align: right;
+//     display: block;
+//     // padding-bottom: $spacing--large-x;
 
-    @include media('>phone') {
-        display: table;
-        padding-bottom: 0;
-    }
+//     // @include media('>phone') {
+//     //     display: table;
+//     // }
 
-}
+// }
+
+// .m-page-footer__copyright {
+//     text-align: right;
+//     display: block;
+//     // display: table-cell;
+//     // vertical-align: middle;
+//     // padding-bottom: $spacing--tiny;
+
+//     // @include media('>phone') {
+//     //     display: table;
+//     //     padding-bottom: 0;
+//     // }
+
+// }

@@ -1,15 +1,19 @@
 .menu-footer-navigation-container {
+    
 
-   @include media('>phone') {
-      display: table-cell;
-      vertical-align: middle;
-      padding: 0 0 0 $spacing--tiny;
-  }
+//    @include media('>phone') {
+//       display: table-cell;
+//       vertical-align: bottom;
+//       //padding: 0 0 0 $spacing--tiny;
+//   }
 
    .site-nav__menu {
       margin: 0;
       padding: 0;
-      text-align: left;
+      
+      @include media('>tablet') {
+        text-align: right;
+      }
    }
 
    // List item
@@ -17,7 +21,10 @@
       font-family: font-family(primary, semibold);
       display: inline-block;
       @include set-font-size(1.0rem, 1.0rem, 1.0rem, 1.0rem);
-      padding: 0 $spacing--tiny 0 0;
+      padding: 0 $spacing--tiny 0 0;      
+      @include media('>tablet') {
+        padding: 0 0 0 $spacing--tiny;
+      }
 
       a {
          color: currentColor;

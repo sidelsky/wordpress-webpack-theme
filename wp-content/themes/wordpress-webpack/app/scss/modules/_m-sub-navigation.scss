@@ -3,7 +3,7 @@
 
    &__container {
       background-color: $background-color;
-      padding: $spacing--small 0 0;
+      padding: $spacing--x-small 0 0;
       perspective: 1000px;
       transition: all ease 100ms;
 
@@ -25,14 +25,13 @@
    li {
       display: inline-block;
       text-align: center;
-      lost-column: 1/3;
+      lost-column: 1/4;
       color: palette(tertiary, base);
       transition: color ease-in-out 300ms;
 
 
       a {
          color: currentColor;
-         font-size: 14px; 
          float: left;
          text-decoration: none;
          text-transform: uppercase;
@@ -40,11 +39,11 @@
          width: 100%;
          padding-bottom: $spacing--small;
          font-size: 1.2rem;
+         @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.2rem);
          
          // Tablet upwards
          @include media('>tablet') {
             padding-bottom: $spacing--large-xx;
-            font-size: 1.4rem;
          }
 
       }
@@ -63,7 +62,7 @@
 	bottom: 0; 
 	left: 0; 
 	width: 100px; 
-	height: 5px; 
+	height: 3px; 
    background-color: currentColor;
    overflow: hidden;
 
@@ -72,12 +71,17 @@
       display: block;
       width: 0; 
       height: 0; 
-      $dimensions: 5px;
+      $dimensions: 4px;
       border-left: $dimensions solid transparent;
       border-right: $dimensions solid transparent;
       border-top: $dimensions solid $white;
       position: relative;
       margin: 0 auto;
+
+      @include media('>tablet') {
+         height: 5px; 
+      }
+
    }
 }
  

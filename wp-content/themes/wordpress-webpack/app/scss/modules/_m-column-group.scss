@@ -4,7 +4,12 @@
  
  .m-column-group {
    lost-flex-container: row;
-   //margin-bottom: $spacing--jumbo;
+
+   &--tb-padding {
+
+    padding: $spacing--large-xx 0 $spacing--large;
+
+   }
 
    // Item / Column
    &__item {
