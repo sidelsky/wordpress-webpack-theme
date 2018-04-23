@@ -11,6 +11,7 @@
    background-size: cover;
    padding: 0;
    overflow: hidden;
+   border: solid $spacing--small $white;
 
    @include media('>phone') {
     height: calc(100vh - 30px)

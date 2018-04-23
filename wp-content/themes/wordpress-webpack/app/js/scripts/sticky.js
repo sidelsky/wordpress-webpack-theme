@@ -10,16 +10,22 @@
 		pageWrap,
 		navigationHeight,
 		subNavigationHeight,
+		navWrapper,
+		navWrapperHeight,
 		stickyTop;
 
 		subNavigation = document.querySelector('.js-subnavigation');
 		navigation = document.querySelector('.js-header');
 		pageWrap = document.querySelector('.page-wrap');
+		navWrapper = document.querySelector('.js-nav-wrapper');
 		navigationHeight = navigation.offsetHeight;
 
 	if (subNavigation) {
 		subNavigationHeight = subNavigation.offsetHeight;
 		stickyTop = subNavigation.offsetTop;
+
+		navWrapperHeight = navWrapper.offsetHeight;
+		navWrapper.style.height = navWrapperHeight + 'px';
 	}
 	
 	pageWrap.style.paddingTop = navigationHeight + 'px';
@@ -27,8 +33,7 @@
 	function skicky_navigation() {
 
 		if (subNavigation) {
-			if (window.pageYOffset >= stickyTop + 10) {
-				
+			if (window.pageYOffset >= stickyTop) {				
 				navigationHeight = navigation.offsetHeight;
 				pageWrap.classList.add('is-sticky');
 				subNavigation.style.top = navigationHeight + 'px';

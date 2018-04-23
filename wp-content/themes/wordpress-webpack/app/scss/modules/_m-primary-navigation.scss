@@ -3,11 +3,17 @@
    &::before {
       content: '';
       display: block;
-      height: 3px;
+      height: 2px;
       background-color: currentColor;
       position: absolute;
-      bottom: 6px;
+      bottom: 3px;
       width: 100%;
+
+      @include media('>tablet') {
+         height: 3px;
+         bottom: 6px;
+      }
+
    }
 
 }

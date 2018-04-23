@@ -33,7 +33,7 @@
 
                   // If there is a Modal image
                   if( $modalImage ) {
-                     echo '<a href="#'. $titleName .'" class="m-column-group__expand m-column-group__expand--has-modal">';
+                     echo '<a data-remodal-target="'. $titleName .'" class="m-column-group__expand m-column-group__expand--has-modal" id="'. $titleName .'">';
                         echo '<span class="m-column-group__expand-icon">';
                            /**
                             * Render SVG icon — Close icon
@@ -60,7 +60,6 @@
                   echo '<div class="m-column-group__copy">'. $excerpt .'</div>';
 
                echo '</div>';
-
 
                /**
                 * Modal view template-modal-view.php

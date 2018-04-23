@@ -68,6 +68,7 @@
 		'image' => get_field( 'image' )['url'],
 		'linkTitle' => get_field( 'link_title' ),
 		'linkUrl' => get_field( 'link_url' ),
+		'darkCopy' => TRUE
 	]);
 
 

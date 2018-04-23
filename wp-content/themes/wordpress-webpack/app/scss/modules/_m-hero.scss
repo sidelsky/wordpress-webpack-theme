@@ -89,12 +89,16 @@
 	@include set-font-size(1.4rem, 1.8rem, 2rem, 2.4rem);
 	letter-spacing: .2em;
 
+	// left: 0;
+	// right: 0;
+	// position: absolute;
+
 	strong {
 		letter-spacing: .3em;
 	}
 
 	&--top {
-		top: 20%;
+		top: 0;
 	}
 
 	&--bottom {
@@ -102,15 +106,30 @@
 	}
 
 	// Tablet upwards
-	@include media('>tablet') {
-		left: 0;
-		right: 0;
-		position: absolute;
+	@include media('>phone') {
+
 
 		&--top {
-			top: -16%;
+			top: -7%;
+		}
+	
+		&--bottom {
+			bottom: 20%;
 		}
 
 	}
+
+		// Tablet upwards
+		@include media('>tablet') {
+	
+			&--top {
+				top: -15%;
+			}
+		
+			&--bottom {
+				bottom: 20%;
+			}
+	
+		}
 
 }

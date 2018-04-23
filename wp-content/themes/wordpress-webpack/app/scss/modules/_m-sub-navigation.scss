@@ -6,8 +6,8 @@
     transform: translate3d(0, 0, 0);
     &__container {
         background-color: $background-color; 
-        //padding: $spacing--x-small 0 0;
         transition: all ease 200ms; 
+
         // Tablet upwards
         @include media('>tablet') {
             //padding: $spacing--large 0 0;
@@ -37,18 +37,87 @@
             text-transform: uppercase;
             display: block;
             width: 100%; 
-            font-size: 1.2rem;
-            @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.2rem); 
+            font-family: $font-primary-medium;
+            @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.3rem);
+            letter-spacing: .1em;
+            padding-top: $spacing--small;
+            padding-bottom: $spacing--small;
+
+            @include media('>tablet') {
+                padding-top: $spacing--medium;
+                padding-bottom: $spacing--medium;
+            }
+
             // Tablet upwards
             @include media('>tablet') {
                 padding-top: $spacing--large;
-                padding-bottom: $spacing--x-small;
+                padding-bottom: $spacing--large;
+            }
+
+            span {
+                display: block;
+                position: relative;
+                overflow: hidden;
+                line-height: 1.5;
+            }
+
+            &:hover {
+                span {
+                    &:nth-of-type(3) {
+                        display: inline-block;
+                        padding-bottom: 11px;
+                        &::after {
+                            content: '';
+                            position: absolute;
+                            display: block;
+                            bottom: 0px;
+                            left: 0;
+                            right: 0;
+                            height: 3px;
+                            background-color: palette(tertiary, light);
+                        }
+                    }
+                }
+            }
+
+        }
+
+    }
+}
+
+.current-menu-item {
+    span {
+        display: block;
+        position: relative;
+        overflow: hidden;
+        &:nth-of-type(3) {
+            display: inline-block;
+            padding-bottom: 11px;
+            &::after {
+                content: '';
+                position: absolute;
+                display: block;
+                bottom: 0px;
+                left: 0;
+                right: 0;
+                height: 3px;
+                background-color: currentColor;
             }
         }
-        span {
-            display: block;
-        }
     }
+
+    // &:hover {
+    //     span {
+    //         &:nth-of-type(3) {
+    //             display: inline-block;
+    //             padding-bottom: 11px;
+    //             &::after {
+    //                 content: '';
+    //                 background-color: palette(tertiary, light);
+    //             }
+    //         }
+    //     }
+    // }
 }
 
 .magic-line {
@@ -58,21 +127,7 @@
     width: 100px;
     height: 3px;
     background-color: currentColor;
-    overflow: hidden; // &:after {
-    //    content: '';
-    //    display: block;
-    //    width: 0; 
-    //    height: 0; 
-    //    $dimensions: 4px;
-    //    border-left: $dimensions solid transparent;
-    //    border-right: $dimensions solid transparent;
-    //    border-top: $dimensions solid $white;
-    //    position: relative;
-    //    margin: 0 auto;
-    //    @include media('>tablet') {
-    //       height: 5px; 
-    //    }
-    // }
+    overflow: hidden;
 }
 
 /**
@@ -85,7 +140,6 @@
         position: fixed;
         top: 0;
         width: 100%;
-        z-index: 1;
-        box-shadow: 0px 0px 20px 0px rgba($black, .20);
+        z-index: 2;
     }
 }

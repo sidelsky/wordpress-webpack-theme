@@ -1,20 +1,16 @@
 <?php
    /**
     * Copy image
-    */
+    */  
 
-   // Check to see if it's a headline
-   $isHeadline = $largeTitle ? 'm-copy-image--headline' : '';
-
-   // Check to see if it has copy
-   $colorDark = $largeTitleCopy ? 'm-copy-image--color-dark' : '';  
+   echo $darkCopy;
 ?>
 
 <section class="u-section">
    <div class="u-row u-row--small" data-in-viewport>
       <div class="m-copy-image">
          
-         <div class="m-copy-image__column <?= $isHeadline ?>">
+         <div class="m-copy-image__column <?= $largeTitle ? 'm-copy-image--headline' : '' ?> <?= $darkCopy ? 'm-copy-image--color-dark' : ''; ?>">
             <?php if($copy) : ?>
                <?= $copy ?>
             <?php else : ?>
@@ -26,7 +22,7 @@
             <?php endif; ?>
          </div>
 
-         <div class="m-copy-image__column <?= $colorDark ?>">
+         <div class="m-copy-image__column">
             <?php if( $image ) : ?>
                <img src="<?= $image ?>">
             <?php endif; ?>
