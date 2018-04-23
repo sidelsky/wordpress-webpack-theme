@@ -6,11 +6,9 @@
 	include("header.php");
 	
 	// Sub navigation
-	$args = [
-		'World-class team',
-		'Specification'
-	];
-	if( !is_page( $args ) ) {
+	if( !is_page([
+		'World-class team'
+	]) ) {
 		include("partials/sub-navigation.php");
 	}
 

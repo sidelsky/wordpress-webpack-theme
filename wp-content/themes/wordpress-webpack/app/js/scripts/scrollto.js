@@ -5,7 +5,7 @@
    body = $('html,body'),
 	target,
 	navigation = document.querySelector('.js-header'),
-	navigationHeight = navigation.offsetHeight - 20;
+	navigationHeight = navigation.offsetHeight + 20;
 
    elem.on('click', scrolltoani );
 

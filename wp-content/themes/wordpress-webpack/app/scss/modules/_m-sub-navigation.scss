@@ -1,87 +1,91 @@
-.m-sub-navigation { 
-   transform : translate3d(0, 0, 0);
+/**
+ * Sub navigation
+ */
 
-   &__container {
-      background-color: $background-color;
-      padding: $spacing--x-small 0 0;
-      perspective: 1000px;
-      transition: all ease 100ms;
-
-      // Tablet upwards
-      @include media('>tablet') {
-         padding: $spacing--large 0 0;
-      }
-
-   }
+.m-sub-navigation {
+    transform: translate3d(0, 0, 0);
+    &__container {
+        background-color: $background-color; 
+        //padding: $spacing--x-small 0 0;
+        transition: all ease 200ms; 
+        // Tablet upwards
+        @include media('>tablet') {
+            //padding: $spacing--large 0 0;
+        }
+    }
 }
 
+/**
+ * Sub navigation menu
+ */
 
-.m-sub-navigation__menu { 
-	margin: 0 auto; 
-	list-style: none; 
-   position: relative; 
-   lost-flex-container: row;
-   
-   li {
-      display: inline-block;
-      text-align: center;
-      lost-column: 1/4;
-      color: palette(tertiary, base);
-      transition: color ease-in-out 300ms;
-
-
-      a {
-         color: currentColor;
-         float: left;
-         text-decoration: none;
-         text-transform: uppercase;
-         display: block;
-         width: 100%;
-         padding-bottom: $spacing--small;
-         font-size: 1.2rem;
-         @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.2rem);
-         
-         // Tablet upwards
-         @include media('>tablet') {
-            padding-bottom: $spacing--large-xx;
-         }
-
-      }
-
-      span {
-         display: block;
-      }
-
-   }
-
+.m-sub-navigation__menu {
+    margin: 0 auto;
+    list-style: none;
+    position: relative;
+    lost-flex-container: row;
+    li {
+        display: inline-block;
+        text-align: center;
+        lost-column: 1/4;
+        color: palette(tertiary, base);
+        transition: color ease-in-out 300ms;
+        a {
+            color: currentColor;
+            float: left;
+            text-decoration: none;
+            text-transform: uppercase;
+            display: block;
+            width: 100%; 
+            font-size: 1.2rem;
+            @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.2rem); 
+            // Tablet upwards
+            @include media('>tablet') {
+                padding-top: $spacing--large;
+                padding-bottom: $spacing--x-small;
+            }
+        }
+        span {
+            display: block;
+        }
+    }
 }
- 
 
-.magic-line { 
-	position: absolute;
-	bottom: 0; 
-	left: 0; 
-	width: 100px; 
-	height: 3px; 
-   background-color: currentColor;
-   overflow: hidden;
-
-   &:after {
-      content: '';
-      display: block;
-      width: 0; 
-      height: 0; 
-      $dimensions: 4px;
-      border-left: $dimensions solid transparent;
-      border-right: $dimensions solid transparent;
-      border-top: $dimensions solid $white;
-      position: relative;
-      margin: 0 auto;
-
-      @include media('>tablet') {
-         height: 5px; 
-      }
-
-   }
+.magic-line {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100px;
+    height: 3px;
+    background-color: currentColor;
+    overflow: hidden; // &:after {
+    //    content: '';
+    //    display: block;
+    //    width: 0; 
+    //    height: 0; 
+    //    $dimensions: 4px;
+    //    border-left: $dimensions solid transparent;
+    //    border-right: $dimensions solid transparent;
+    //    border-top: $dimensions solid $white;
+    //    position: relative;
+    //    margin: 0 auto;
+    //    @include media('>tablet') {
+    //       height: 5px; 
+    //    }
+    // }
 }
- 
+
+/**
+   * Is stickey header and navigation
+   */
+
+.is-sticky {
+    .m-sub-navigation__container {
+        transform: translate3d(0, 0, 0);
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        box-shadow: 0px 0px 20px 0px rgba($black, .20);
+    }
+}

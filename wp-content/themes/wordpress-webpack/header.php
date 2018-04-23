@@ -15,8 +15,6 @@
 	
 	<body <?php body_class(); ?> >
 
-
-
 		<?php
 			/**
 			 * Import SVG Sprite
@@ -27,22 +25,6 @@
 			 * Content EN
 			 */
 			include('content/en.php');
-
-			/**
-			 * Require all Views (Functions)
-			 */
-			function return_views() {
-
-				$folder = '/views/*.php';
-				$files = glob(dirname(__FILE__) . $folder);
-
-				foreach( $files as $file ) {
-					require_once( $file );
-				}
-
-			}
-
-			return_views();
 		
 		/**
 		 * Page wrap
@@ -56,13 +38,13 @@
 				echo '<header class="m-page-header__inner-container u-row u-row--small" >';
 					echo '<div class="m-page-header__logo-container">';
 						/**
-						* Render site logo
+						* Render SVG icon — Zuma logo
 						*/
 						echo Render_class::class_render([
-							'template_name' => 'template-svg-icons',
-							'icon_name'		 => 'zuma',
-							'class_name'	 => 'm-page-header__logo',
-							'href'	 		 => home_url()
+							'templateName' => 'template-svg-icons',
+							'iconName'		=> 'zuma',
+							'className'	 	=> 'm-page-header__logo',
+							'href'	 		=> home_url()
 						]);
 					echo '</div>';
 					
@@ -83,11 +65,11 @@
 			* Render Hero
 			*/
 			echo Render_class::class_render([
-				'template_name' 			=> 'template-render-hero',
-				'post_thumbnail_url' 	=> get_the_post_thumbnail_url(),
-				'hero_title_1st_line'	=> get_field( 'hero_title_1st_line' ),
-				'hero_title_2nd_line'	=> get_field( 'hero_title_2nd_line' ),
-				'image_only'	 		 	=> FALSE
+				'templateName' 		=> 'template-render-hero',
+				'postThumbnailUrl' 	=> get_the_post_thumbnail_url(),
+				'heroTitle1stLine'	=> get_field( 'hero_title_1st_line' ),
+				'heroTitle2ndLine'	=> get_field( 'hero_title_2nd_line' ),
+				'imageOnly'	 		 	=> FALSE
 			]);
 
 			/**

@@ -4,12 +4,10 @@
 .m-hero {
 
    @include aspect-ratio(4,4);
-	//background-size: cover;
-	background-size: contain;
+	background-size: cover;
    background-position: center center;
    background-repeat: no-repeat;
    margin: 0 auto;
-   //lost-align: center;
 }
 
 /**
@@ -18,7 +16,6 @@
 .m-hero__title-container {
 	text-transform: uppercase;
 	text-align: center;
-	//lost-align: center;
 	@include aspect-ratio(3.5,2);
 	@include vertical-align();
 	width: 100%;
@@ -53,8 +50,9 @@
 */
 .m-hero__title--home {
 	color: palette(secondary, base);
-	@include set-font-size(1.8rem, 2.4rem, 2.4rem, 3rem);
-
+	@include set-font-size(1.8rem, 2.4rem, 2.4rem, 3.2rem);
+	font-family: $font-primary-medium;
+	letter-spacing: .1em;
 	$position: 10%;
 
 	&--top {
@@ -88,7 +86,12 @@
 */
 .m-hero__title--zuma-halo {
 	color: palette(primary, base);
-	@include set-font-size(1.4rem, 1.8rem,  2.4rem);
+	@include set-font-size(1.4rem, 1.8rem, 2rem, 2.4rem);
+	letter-spacing: .2em;
+
+	strong {
+		letter-spacing: .3em;
+	}
 
 	&--top {
 		top: 20%;
@@ -105,7 +108,7 @@
 		position: absolute;
 
 		&--top {
-			top: -12.5%;
+			top: -16%;
 		}
 
 	}

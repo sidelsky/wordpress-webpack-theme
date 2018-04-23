@@ -6,7 +6,7 @@
       height: 3px;
       background-color: currentColor;
       position: absolute;
-      bottom: 0;
+      bottom: 6px;
       width: 100%;
    }
 
@@ -24,7 +24,7 @@
    }
    
    @include media('>desktop') {
-      padding: 5.2rem 0;
+      padding: 4.5rem 0;
    }
 
    .site-nav__menu {

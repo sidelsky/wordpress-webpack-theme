@@ -29,29 +29,3 @@
    }
 
 }
-
-  /**
-   * Is stickey header and navigation
-   */
- .is-sticky {
-
-   .menu-primary-navigation-container {
-    //  padding: $spacing--tiny 0;
-    //  transition: all ease 180ms;
-
-    // @include media('>tablet') {
-    //   padding: $spacing--small 0;
-    // }
-
-   }
-
-   // Sub navigation
-   .m-sub-navigation__container {
-      transform: translate3d(0,0,0);
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 200;
-   }
-
- }

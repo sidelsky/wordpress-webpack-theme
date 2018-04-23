@@ -17,7 +17,7 @@
        
        // Template folder
        $template_folder = 'templates/';
-       $template_name = $args['template_name'];
+       $template_name = $args['templateName'];
        $args['template'] = $template_folder . $template_name . '.php';
 
        // Render the contents
