@@ -8,7 +8,7 @@ const lost = require("lost");
 const SvgStore = require("webpack-svgstore-plugin");
 
 const themeSlug = "wordpress-webpack";
-const vhost = "http://littlecourt2018.localhost/";
+const vhost = "http://zuma.localhost/";
 
 module.exports = {
    entry: ["./app/js/app.js", "./app/scss/style.scss"],
@@ -93,7 +93,7 @@ module.exports = {
                {
                   loader: true ? "file-loader" : "url-loader",
                   options: {
-                     name: "assets/img/[name].[hash].[ext]",
+                     name: "./assets/img/[name].[hash].[ext]",
                      publicPath: "/"
                   }
                }
@@ -128,7 +128,7 @@ module.exports = {
                { removeComments: true },
                { cleanupIDs: true },
                { removeDimensions: false }
-           ]
+            ]
          },
          prefix: "icon" + "-"
       })

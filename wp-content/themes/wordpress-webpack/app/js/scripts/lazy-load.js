@@ -13,7 +13,6 @@
 // jQuery version
 import "waypoints/lib/jquery.waypoints";
 
-
 // var waypoint = new Waypoint({
 //    element: document.querySelector('.m-brand-logos'),
 //    handler: function(direction) {
@@ -21,51 +20,47 @@ import "waypoints/lib/jquery.waypoints";
 //    }
 //  })
 
- 
-
- (function($){
-
+(function($) {
    var $this,
-       animate = 'animate',
-       time = 20,
-       $window = $(window),
-       $elem = $('[data-in-viewport]'),
-       itemQueue = [],
-       delay = 50,
-       queueTimer;
+      animate = "animate",
+      time = 20,
+      $window = $(window),
+      $elem = $("[data-in-viewport]"),
+      itemQueue = [],
+      delay = 30,
+      queueTimer;
 
-       function processItemQueue () {
+   function processItemQueue() {
+      //$this = $(this);
 
-         //$this = $(this);
+      if (queueTimer) return;
 
-         if (queueTimer) return;
+      queueTimer = window.setInterval(function() {
+         if (itemQueue.length) {
+            $(itemQueue.shift()).animate(
+               {
+                  opacity: 1
+               },
+               time,
+               function() {
+                  $(this).addClass("animate");
+               }
+            );
+            processItemQueue();
+         } else {
+            window.clearInterval(queueTimer);
+            queueTimer = null;
+         }
+      }, delay);
+   }
 
-         queueTimer = window.setInterval(function () {
-
-           if (itemQueue.length) {
-
-             $(itemQueue.shift()).animate({
-               opacity: 1
-             }, time, function(){
-               $(this).addClass('animate');
-             });
-             processItemQueue();
-           }
-           else {
-             window.clearInterval(queueTimer);
-             queueTimer = null;
-           }
-         }, delay);
-
-       }
-       
-
-       $elem.waypoint(function () {
+   $elem.waypoint(
+      function() {
          itemQueue.push(this.element);
          processItemQueue();
-       }, {
-         offset: '100%'
-       });
-
-
- }(jQuery));
+      },
+      {
+         offset: "100%"
+      }
+   );
+})(jQuery);

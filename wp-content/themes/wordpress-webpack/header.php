@@ -67,6 +67,7 @@
 			echo Render_class::class_render([
 				'templateName' 		=> 'template-render-hero',
 				'postThumbnailUrl' 	=> get_the_post_thumbnail_url(),
+				'heroTitleImage' 		=> get_field('hero_title_image')['url'],
 				'heroTitle1stLine'	=> get_field( 'hero_title_1st_line' ),
 				'heroTitle2ndLine'	=> get_field( 'hero_title_2nd_line' ),
 				'imageOnly'	 		 	=> FALSE

@@ -25,7 +25,8 @@
                'postThumbnailUrl' 	=> get_sub_field('image')['url'],
                'heroTitle_1stLine'	=> NULL,
                'heroTitle_2ndLine'	=> NULL,
-               'image)nly'	 		 	=> TRUE
+               'imageOnly'	 		 	=> TRUE,
+               'aspectRatio'        => TRUE
             ]);
          endif;
 
@@ -45,7 +46,8 @@
                'image'           => get_sub_field( 'image' )['url'],
                'linkTitle'       => get_sub_field( 'link_title' ),
                'linkUrl'         => get_sub_field( 'link_url' ),
-               'colorDark'       => FALSE
+               'darkCopyLeftCol'=> FALSE,
+               'darkCopyRightCol'=> TRUE,
             ]);
 
          endif;

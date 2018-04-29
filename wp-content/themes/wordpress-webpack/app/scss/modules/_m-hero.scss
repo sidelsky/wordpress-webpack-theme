@@ -2,12 +2,23 @@
 * Hero
 */
 .m-hero {
-
-   @include aspect-ratio(4,4);
+	height: calc(100vh - 136px);
 	background-size: cover;
    background-position: center center;
    background-repeat: no-repeat;
-   margin: 0 auto;
+	margin: 0 auto;
+	overflow: hidden;
+
+	&--aspect-ratio {
+		@include aspect-ratio(4,4);
+		height: 100%;
+	}
+}
+
+
+.main-hero--with-image{
+	overflow: visible;
+	height: auto;	
 }
 
 /**
@@ -16,15 +27,9 @@
 .m-hero__title-container {
 	text-transform: uppercase;
 	text-align: center;
-	@include aspect-ratio(3.5,2);
-	@include vertical-align();
+	margin: 0;
+	@include vertical-align(relative, 50%, 50%, 1);
 	width: 100%;
-   
-   @include media('>tablet') { 
-      position: absolute;
-      width: 60%;
-   }
-
 }
 
 /**
@@ -32,9 +37,6 @@
 */
 .m-hero__title {
 	display: block;
-	position: absolute;
-	left: 0;
-	right: 0;
 
 	//Superscript
 	sup {
@@ -45,37 +47,41 @@
 }
 
 
+.m-hero__title-image {
+	display: block;
+}
+
 /**
 * Home / front page title
 */
 .m-hero__title--home {
 	color: palette(secondary, base);
-	@include set-font-size(1.8rem, 2.4rem, 2.4rem, 3.2rem);
+	@include set-font-size(1.6rem, 2.4rem, 2.4rem, 3.2rem);
 	font-family: $font-primary-medium;
 	letter-spacing: .1em;
-	$position: 10%;
+	// $position: 10%;
 
-	&--top {
-		top: $position;
-	}
+	// &--top {
+	// 	top: $position;
+	// }
 
-	&--bottom {
-		bottom: $position;
-	}
+	// &--bottom {
+	// 	bottom: $position;
+	// }
 
 	// Tablet upwards
 	@include media('>tablet') {
-		left: 0;
-		right: 0;
-		position: absolute;
+		// left: 0;
+		// right: 0;
+		// position: absolute;
 
-		&--top {
-			top: 0;
-		}
+		// &--top {
+		// 	top: 0;
+		// }
 
-		&--bottom {
-			bottom: 0;
-		}
+		// &--bottom {
+		// 	bottom: 0;
+		// }
 
 	}
 
@@ -86,12 +92,8 @@
 */
 .m-hero__title--zuma-halo {
 	color: palette(primary, base);
-	@include set-font-size(1.4rem, 1.8rem, 2rem, 2.4rem);
+	@include set-font-size(1.2rem, 1.8rem, 2rem, 2.2rem);
 	letter-spacing: .2em;
-
-	// left: 0;
-	// right: 0;
-	// position: absolute;
 
 	strong {
 		letter-spacing: .3em;

@@ -13,6 +13,7 @@ import init_remodal from "./scripts/remodal";
 import "./scripts/scrollto";
 import "./scripts/sticky";
 import "./scripts/lazy-load";
+import "./scripts/hero-paralax";
 
 /**
  * Vendor scripts
@@ -38,7 +39,7 @@ window.enhance_website = function() {
             document.readyState === "complete" ||
             document.readyState === "interactive"
          ) {
-            init(); 
+            init();
          } else {
             document.onreadystatechange = null;
          }

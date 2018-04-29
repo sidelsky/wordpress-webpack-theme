@@ -1,23 +1,3 @@
-%active-menu {
-
-   &::before {
-      content: '';
-      display: block;
-      height: 2px;
-      background-color: currentColor;
-      position: absolute;
-      bottom: 3px;
-      width: 100%;
-
-      @include media('>tablet') {
-         height: 3px;
-         bottom: 6px;
-      }
-
-   }
-
-}
-
 .menu-primary-navigation-container {
    display: table-cell;
    vertical-align: middle;
@@ -25,17 +5,13 @@
    transition: all ease 100ms;
    padding: $spacing--tiny 0;
 
-   @include media('>tablet') {
-      padding: $spacing--large-xx 0;
-   }
-   
    @include media('>desktop') {
-      padding: 4.5rem 0;
+      padding: 4.4rem 0;
    }
 
    .site-nav__menu {
       margin: 0;
-      padding: 6px 0 0 0;
+      padding: 0;
       text-align: right;
    }
 
@@ -47,10 +23,9 @@
       @include set-font-size(.8rem, 1rem, 1.2rem, 1.2rem);
       padding-left: $spacing--large-xx;
       letter-spacing: 0.15rem;
-      line-height: 2;
-
-      @include media('>tablet') {
-         line-height: 2.1;
+      
+      @include media('<tablet') {
+         line-height: 2;
       }
       
       @include media('>desktop') {
@@ -62,17 +37,36 @@
          cursor: pointer;
          position: relative;
          display: inline-block;
+         line-height: 3;
+
          @include media('>tablet') {
-            padding-bottom: 15px;
+            line-height: 2;
          }
 
-         &::before {
+         &::after {
             content: '';
-            transition: ease 200ms all;
+            display: block;
+            height: 2px;
+            bottom: 2px;
+            background-color: currentColor;
+            position: absolute;
+            width: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            transition: width 250ms ease-in-out;
+            border-radius: 25px;
+
+            @include media('>tablet') {
+               bottom: -10px;
+               height: 3px;
+            }
+
          }
 
          &:hover {
-            @extend %active-menu;
+            &::after {
+               width: 100%;
+            }
          }
 
       }
@@ -83,7 +77,10 @@
    .current_page_item,
    .current-page-ancestor {
       a {
-         @extend %active-menu;
+         &::after {
+            content: '';
+            width: 100%;
+         }
       }
    }
 

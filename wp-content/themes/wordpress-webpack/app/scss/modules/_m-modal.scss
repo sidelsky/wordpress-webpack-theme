@@ -10,8 +10,11 @@
    background-position: center center;
    background-size: cover;
    padding: 0;
+   margin: 0;
    overflow: hidden;
    border: solid $spacing--small $white;
+   //width: 90%;
+   height: auto;
 
    @include media('>phone') {
     height: calc(100vh - 30px)
@@ -47,7 +50,7 @@
    }
 
    p {
-      @include set-font-size(1.2rem, 1.2rem, 1.4rem, 1.8rem);
+      @include set-font-size(1.2rem, 1.2rem, 1.4rem, 1.6rem);
       line-height: 1.65;
       margin-bottom: $spacing--large;
    }
@@ -103,7 +106,7 @@
    font-family: $font-primary-semibold;
 
       &__item {
-         margin-bottom: $spacing--large;
+         margin-bottom: $spacing--x-medium;
 
          &:last-child {
             margin-bottom: 0;

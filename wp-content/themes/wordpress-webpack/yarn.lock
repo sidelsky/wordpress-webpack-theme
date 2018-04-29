@@ -3110,7 +3110,7 @@ isstream@~0.1.2:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/isstream/-/isstream-0.1.2.tgz#47e63f7af55afa6f92e1500e690eb8b8529c099a"
 
-jquery@^3.2.1:
+jquery@*, jquery@^3.2.1:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.3.1.tgz#958ce29e81c9790f31be7792df5d4d95fc57fbca"
 
@@ -4748,6 +4748,12 @@ regjsparser@^0.1.4:
   dependencies:
     jsesc "~0.5.0"
 
+remodal@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/remodal/-/remodal-1.1.1.tgz#00f580b09417b2b7e7a425b17327ec10f3d596c3"
+  dependencies:
+    jquery "*"
+
 remove-trailing-separator@^1.0.1:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef"
@@ -4883,6 +4889,10 @@ resp-modifier@6.0.2:
   dependencies:
     debug "^2.2.0"
     minimatch "^3.0.2"
+
+responsive-lazy-loader@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/responsive-lazy-loader/-/responsive-lazy-loader-0.2.2.tgz#535be5116689fdc0e185c4d2daf916b76e5fcbcb"
 
 right-align@^0.1.1:
   version "0.1.3"

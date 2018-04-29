@@ -3,16 +3,11 @@
  */
 
 .m-sub-navigation {
-    transform: translate3d(0, 0, 0);
-    &__container {
-        background-color: $background-color; 
-        transition: all ease 200ms; 
-
-        // Tablet upwards
-        @include media('>tablet') {
-            //padding: $spacing--large 0 0;
-        }
-    }
+   transform: translate3d(0, 0, 0);
+   &__container {
+      background-color: $background-color;
+      transition: all ease 200ms;
+   }
 }
 
 /**
@@ -20,126 +15,117 @@
  */
 
 .m-sub-navigation__menu {
-    margin: 0 auto;
-    list-style: none;
-    position: relative;
-    lost-flex-container: row;
-    li {
-        display: inline-block;
-        text-align: center;
-        lost-column: 1/4;
-        color: palette(tertiary, base);
-        transition: color ease-in-out 300ms;
-        a {
-            color: currentColor;
-            float: left;
-            text-decoration: none;
-            text-transform: uppercase;
+   margin: 0 auto;
+   list-style: none;
+   position: relative;
+   lost-flex-container: row;
+   li {
+      display: inline-block;
+      text-align: center;
+      lost-column: 1/4;
+      color: palette(tertiary, base);
+      transition: color ease-in-out 300ms;
+      a {
+         color: currentColor;
+         text-decoration: none;
+         text-transform: uppercase;
+         display: block;
+         width: 100%;
+         font-family: $font-primary-semibold;
+         @include set-font-size(1rem, 1rem, 1.2rem, 1.3rem);
+         letter-spacing: 0.1em;
+         padding-top: $spacing--small;
+         padding-bottom: $spacing--small;
+
+         @include media(">tablet") {
+            padding-top: $spacing--medium;
+            padding-bottom: $spacing--medium;
+         }
+
+         // Tablet upwards
+         @include media(">tablet") {
+            padding-top: $spacing--medium;
+            padding-bottom: $spacing--medium;
+         }
+
+         span {
             display: block;
-            width: 100%; 
-            font-family: $font-primary-medium;
-            @include set-font-size(1.0rem, 1.0rem, 1.2rem, 1.3rem);
-            letter-spacing: .1em;
-            padding-top: $spacing--small;
-            padding-bottom: $spacing--small;
+            position: relative;
+            line-height: 1.5;
 
-            @include media('>tablet') {
-                padding-top: $spacing--medium;
-                padding-bottom: $spacing--medium;
+            &:nth-of-type(3) {
+               display: inline-block;
+
+               &::after {
+                  content: '';
+                  display: block;
+                  height: 2px;
+                  bottom: -5px;
+                  background-color: currentColor;
+                  position: absolute;
+                  width: 0;
+                  left: 50%;
+                  transform: translateX(-50%);
+                  transition: all 250ms ease-in-out;
+                  border-radius: 25px;
+      
+                  @include media('>tablet') {
+                     bottom: -12px;
+                     height: 3px;
+                  }
+      
+               }
             }
+         }
 
-            // Tablet upwards
-            @include media('>tablet') {
-                padding-top: $spacing--large;
-                padding-bottom: $spacing--large;
-            }
-
+         &:hover {
             span {
-                display: block;
-                position: relative;
-                overflow: hidden;
-                line-height: 1.5;
+               &:nth-of-type(3) {
+                  &::after {
+                     width: 100%;
+                  }
+               }
             }
-
-            &:hover {
-                span {
-                    &:nth-of-type(3) {
-                        display: inline-block;
-                        padding-bottom: 11px;
-                        &::after {
-                            content: '';
-                            position: absolute;
-                            display: block;
-                            bottom: 0px;
-                            left: 0;
-                            right: 0;
-                            height: 3px;
-                            background-color: palette(tertiary, light);
-                        }
-                    }
-                }
-            }
-
-        }
-
-    }
+         }
+      }
+   }
 }
 
-.current-menu-item {
-    span {
-        display: block;
-        position: relative;
-        overflow: hidden;
-        &:nth-of-type(3) {
-            display: inline-block;
-            padding-bottom: 11px;
+/**
+* Active state
+*/
+.m-sub-navigation__menu li.current-menu-item {
+   a {
+      span {
+         &:nth-of-type(3) {
             &::after {
-                content: '';
-                position: absolute;
-                display: block;
-                bottom: 0px;
-                left: 0;
-                right: 0;
-                height: 3px;
-                background-color: currentColor;
+               width: 100%;
             }
-        }
-    }
-
-    // &:hover {
-    //     span {
-    //         &:nth-of-type(3) {
-    //             display: inline-block;
-    //             padding-bottom: 11px;
-    //             &::after {
-    //                 content: '';
-    //                 background-color: palette(tertiary, light);
-    //             }
-    //         }
-    //     }
-    // }
+         }
+      }
+   }
 }
 
-.magic-line {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100px;
-    height: 3px;
-    background-color: currentColor;
-    overflow: hidden;
-}
+// .magic-line {
+//    position: absolute;
+//    bottom: 0;
+//    left: 0;
+//    width: 100px;
+//    height: 3px;
+//    background-color: currentColor;
+//    overflow: hidden;
+// }
 
 /**
    * Is stickey header and navigation
    */
 
 .is-sticky {
-    .m-sub-navigation__container {
-        transform: translate3d(0, 0, 0);
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 2;
-    }
+   .m-sub-navigation__container {
+      transform: translate3d(0, 0, 0);
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 2;
+   }
 }

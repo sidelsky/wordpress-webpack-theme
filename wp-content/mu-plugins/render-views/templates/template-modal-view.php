@@ -3,27 +3,27 @@
     * Template modal view
     */
 
-    $themeUrl = get_bloginfo('template_directory');
-    $themeImageFolder = $themeUrl . '/assets/img/';
+   $themeUrl = get_bloginfo('template_directory');
+   $themeImageFolder = $themeUrl . '/assets/img/';
 
 ?>
 <?php if( !is_page(['World-class team']) ) : ?>
 
-   <div class="remodal m-modal" data-remodal-id="<?= $modalName ?>" style="background-image:url('<?= $modalImage ?>');" class="m-modal">
+   <div class="remodal m-modal" data-remodal-id="<?= $modalName ?>" data-remodal-options='{ "hashTracking": false }' style="background-image:url('<?= $modalImage ?>');" class="m-modal">
 
-         <?php
-            /**
-             * Render SVG icon — Close icon
-             */
-            echo Render_class::class_render([
-               'templateName'   => 'template-svg-icons',
-               'iconName'       => 'close',
-               'className'      => NULL,
-               'hrefClass'      => 'm-column-group__expand-icon',
-               'hrefDataAtts'   => 'data-remodal-action="close"',
-               'href'           => '#'
-            ]);
-         ?>
+		<?php
+			/**
+			 * Render SVG icon — Close icon
+			 */
+			echo Render_class::class_render([
+				'templateName'   => 'template-svg-icons',
+				'iconName'       => 'close',
+				'className'      => NULL,
+				'hrefClass'      => 'm-column-group__expand-icon',
+				'hrefDataAtts'   => 'data-remodal-action="close"',
+				'href'           => '#'
+			]);
+		?>
 
       <!-- Show caption toggle button -->
       <input type="checkbox" role="button" class="m-modal__content__caption-toggle__checkbox" id="toggle">
@@ -54,7 +54,8 @@
             <?php endif; ?>
 
          </div>
-      </div>
-   </div>
+		</div>
+		<!-- <img src="" alt=""> -->
+    </div>
 
 <?php endif; ?>
