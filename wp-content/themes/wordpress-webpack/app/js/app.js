@@ -14,6 +14,7 @@ import "./scripts/scrollto";
 import "./scripts/sticky";
 import "./scripts/lazy-load";
 import "./scripts/hero-paralax";
+import "./scripts/mobile-navigation";
 
 /**
  * Vendor scripts

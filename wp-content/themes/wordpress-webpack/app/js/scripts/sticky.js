@@ -3,63 +3,55 @@
 /* global site_data */
 /* jshint -W097 */
 
-(function () {
+(function() {
+   var subNavigation,
+      navigation,
+      pageWrap,
+      navigationHeight,
+      subNavigationHeight,
+      navWrapper,
+      navWrapperHeight,
+      stickyTop;
 
-	var subNavigation,
-		navigation,
-		pageWrap,
-		navigationHeight,
-		subNavigationHeight,
-		navWrapper,
-		navWrapperHeight,
-		stickyTop;
+   subNavigation = document.querySelector(".js-subnavigation");
+   navigation = document.querySelector(".js-header");
+   pageWrap = document.querySelector(".page-wrap");
+   navWrapper = document.querySelector(".js-nav-wrapper");
+   navigationHeight = navigation.offsetHeight;
 
-		subNavigation = document.querySelector('.js-subnavigation');
-		navigation = document.querySelector('.js-header');
-		pageWrap = document.querySelector('.page-wrap');
-		navWrapper = document.querySelector('.js-nav-wrapper');
-		navigationHeight = navigation.offsetHeight;
+   if (subNavigation) {
+      subNavigationHeight = subNavigation.offsetHeight;
+      stickyTop = subNavigation.offsetTop;
 
-	if (subNavigation) {
-		subNavigationHeight = subNavigation.offsetHeight;
-		stickyTop = subNavigation.offsetTop;
+      navWrapperHeight = navWrapper.offsetHeight;
+      navWrapper.style.height = navWrapperHeight + "px";
+   }
 
-		navWrapperHeight = navWrapper.offsetHeight;
-		navWrapper.style.height = navWrapperHeight + 'px';
-	}
-	
-	pageWrap.style.paddingTop = navigationHeight + 'px';
-	
-	function skicky_navigation() {
+   pageWrap.style.paddingTop = navigationHeight + "px";
 
-		if (subNavigation) {
-			if (window.pageYOffset >= stickyTop) {				
-				navigationHeight = navigation.offsetHeight;
-				pageWrap.classList.add('is-sticky');
-				subNavigation.style.top = navigationHeight + 'px';
-				//pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
-				
-			} else {
-				pageWrap.classList.remove('is-sticky');
-				subNavigation.style.top = null;
-				pageWrap.style.paddingTop = navigationHeight + 'px';
-			}
-		} else {
-			if (window.pageYOffset >= navigationHeight) {
-				pageWrap.classList.add('is-sticky');
-				pageWrap.style.paddingTop = navigationHeight + 'px';
-			} else {
-				pageWrap.classList.remove('is-sticky');
-			}
-		}
+   function skicky_navigation() {
+      if (subNavigation) {
+         if (window.pageYOffset >= stickyTop) {
+            navigationHeight = navigation.offsetHeight;
+            pageWrap.classList.add("is-sticky");
+            subNavigation.style.top = navigationHeight + "px";
+            //pageWrap.style.paddingTop = subNavigationHeight + navigationHeight + 'px';
+         } else {
+            pageWrap.classList.remove("is-sticky");
+            subNavigation.style.top = null;
+            pageWrap.style.paddingTop = navigationHeight + "px";
+         }
+      } else {
+         if (window.pageYOffset >= navigationHeight) {
+            pageWrap.classList.add("is-sticky");
+            pageWrap.style.paddingTop = navigationHeight + "px";
+         } else {
+            pageWrap.classList.remove("is-sticky");
+         }
+      }
+   }
 
-	}
-
-	window.onscroll = function () {
-		skicky_navigation();
-	};
-
-}());
-
-
-
+   window.onscroll = function() {
+      skicky_navigation();
+   };
+})();

@@ -12,7 +12,7 @@
 	
 	&--font-large {
 		p {
-			@include set-font-size(2.8rem, 4.5rem, 5.5rem, 6.5rem);
+			@include set-font-size(2.6rem, 4.5rem, 5.5rem, 6.5rem);
 			line-height: 1.30;
 		}
 		

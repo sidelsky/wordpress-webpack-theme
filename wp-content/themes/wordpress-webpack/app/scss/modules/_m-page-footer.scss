@@ -9,19 +9,25 @@
 
     &__container {
         width: 100%;
-        padding-top: $spacing--jumbo;
-        padding-bottom: $spacing--large-xxx;
+        padding-top: $spacing--medium;
+        padding-bottom: 100px;
         
         @include media('>tablet') {
             display: table;
+            padding-top: $spacing--jumbo;
+            padding-bottom: $spacing--large-xxx;
         }
 
     } 
     // Logo container
     &__logo-container {
-        //width: 80px;
         display: table-cell;
         vertical-align: middle;
+        display: none;
+
+         @include media('>tablet') {
+            display: table;
+        }
       }
       
       &__logo {
@@ -47,33 +53,13 @@
     }
 }
 
-/**
-* Social icons
-*/
-// .m-page-footer__social-icons {
-//     display: table-cell;
-//     vertical-align: middle;
-//     text-align: right;
-
-//     a {
-//         color: $white;
-//         display: block;
-//     }
-
-//     svg {
-//         $dimensions: 20px;
-//         width: $dimensions;
-//         height: $dimensions;
-//     }
-    
-// }
 
 .m-page-footer__copyright-container {
 
+    text-align: right;
 
     @include media('>tablet') {
 
-        text-align: right;
         display: table-cell;
         vertical-align: bottom;
         line-height: 1.5;
@@ -81,28 +67,3 @@
     }
 
 }
-
-// .m-page-footer__copyright-container {
-//     text-align: right;
-//     display: block;
-//     // padding-bottom: $spacing--large-x;
-
-//     // @include media('>phone') {
-//     //     display: table;
-//     // }
-
-// }
-
-// .m-page-footer__copyright {
-//     text-align: right;
-//     display: block;
-//     // display: table-cell;
-//     // vertical-align: middle;
-//     // padding-bottom: $spacing--tiny;
-
-//     // @include media('>phone') {
-//     //     display: table;
-//     //     padding-bottom: 0;
-//     // }
-
-// }

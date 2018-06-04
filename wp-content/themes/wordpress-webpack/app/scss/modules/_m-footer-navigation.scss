@@ -21,7 +21,7 @@
       font-family: font-family(primary, semibold);
       display: inline-block;
       @include set-font-size(1.0rem, 1.0rem, 1.0rem, 1.0rem);
-      padding: 0 $spacing--tiny 0 0;      
+      padding: 0 0 0 $spacing--tiny;      
       @include media('>tablet') {
         padding: 0 0 0 $spacing--tiny;
       }

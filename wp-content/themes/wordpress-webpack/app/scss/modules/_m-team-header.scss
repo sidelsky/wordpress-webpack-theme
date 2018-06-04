@@ -1,5 +1,57 @@
 .m-team-header {
 
-   padding: 0 $spacing--medium;
+  padding: $spacing--medium $spacing--medium 0;
+  
+  @include media('>desktop') {
+    padding: 0 $spacing--medium;
+  }
+
+
+}
+
+
+
+/**
+* Header versions
+*/
+.m-column-group__item--header {
+
+   lost-column: 1/3 3 2.5%;
+   margin-bottom: 0;
+
+   @include media('>phone') {
+      lost-column: 1/3 3 2.5%;
+   }
+
+   @include media('>tablet') {
+     lost-column: 1/3 3 24px;
+  }
+
+  @include media('>desktop') {
+     //lost-column: 1/5 5 24px;
+     lost-column: 1/3 3 2.5%;
+}
+
+   .m-column-group__expand {
+      margin-bottom: 8% 
+   }
+
+}
+
+
+
+/**
+ * Target the slected Team mamber
+ */
+.m-column-group__item:target {
+
+   .m-column-group__expand {
+      background: lighten( palette(primary, light), 18% );
+
+      img {
+         padding: $spacing--tiny;
+      }
+
+   }
 
 }

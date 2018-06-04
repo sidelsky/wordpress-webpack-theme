@@ -7,8 +7,9 @@
 		<meta charset="<?php bloginfo('charset'); ?>" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-
-		<link href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico" rel="shortcut icon" />
+		<link href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="<?php echo get_template_directory_uri(); ?>/assets/img/favicon-16x16.png" sizes="16x16" />
 
 		<?php wp_head(); ?>
 	</head>
@@ -31,6 +32,18 @@
 		 */
 		echo '<div class="page-wrap">';
 
+		/**
+		 * Mobile menu
+		 */
+		echo '<div class="m-mobile-menu-container">';
+			wp_nav_menu([
+				'theme_location'  => 'primary-navigation',
+				'container'     	=>	'nav',
+				'echo'          	=>	true,
+				'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
+			]);
+		echo '</div>';
+
 			/**
 			 * Page header
 			 */
@@ -47,6 +60,12 @@
 							'href'	 		=> home_url()
 						]);
 					echo '</div>';
+
+					/**
+					 * Mobile Primary navigation
+					 */
+					echo '<input type="checkbox" role="button" class="m-page-header-toggle__checkbox" id="menu_toggle">';
+					echo '<label for="menu_toggle" class="m-page-header-toggle__label" data-closed="MENU" data-open="CLOSE"></label>';
 					
 					/**
 					 * Primary navigation
@@ -57,6 +76,8 @@
 						'echo'          	=>	true,
 						'items_wrap'		=>	'<ul class="site-nav__menu">%3$s</ul>'
 					]);
+
+      			
 
 				echo '</header>';
 			echo '</section>';

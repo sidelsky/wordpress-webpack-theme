@@ -133,34 +133,3 @@
 }
 
 
-/**
-* Header versions
-*/
-.m-column-group__item--header {
-
-   lost-column: 1/3 3 2.5%;
-   margin-bottom: 0;
-
-   .m-column-group__expand {
-      margin-bottom: 8% 
-   }
-
-}
-
-
-
-/**
- * Target the slected Team mamber
- */
-.m-column-group__item:target {
-
-   .m-column-group__expand {
-      background: lighten( palette(primary, light), 18% );
-
-      img {
-         padding: $spacing--tiny;
-      }
-
-   }
-
-}
